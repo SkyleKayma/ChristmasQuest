@@ -2,10 +2,13 @@
     <string name="app_name">Christmas Quest</string>
 
     <!-- Generic -->
-    <string name="generic_continue">Continue</string>
+    <string name="generic_next">Suivant</string>
+    <string name="generic_start">Commencer</string>
 
     <!-- Date/time format -->
     <string name="date_format_dd_MMMM_yyyy_at_HH_mm">dd MMMM yyyy \'à\' HH:mm</string>
+    <string name="home_description">Ahhhh ! Les cadeaux !\n\nNon ça ne va pas !\nRien ne va !\nRien n\'est prêt !\n\nMais que faites-vous !!\n\nAllez immédiatement donner un coup de main aux autres lutins ou bien Noël ne pourra pas se faire cette année !</string>
+    <string name="home_title">Joyeux Noël!</string>
 
     <!-- Home -->
 </resources>

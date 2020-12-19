@@ -5,5 +5,7 @@
     android:id="@+id/toolbar"
     android:layout_width="match_parent"
     android:layout_height="?attr/actionBarSize"
+    android:background="@color/colorPrimaryDark"
     app:contentInsetStartWithNavigation="0dp"
+    app:titleTextColor="@color/colorAccent"
     tools:title="Titre" />
