@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Christmas Quest</string>
+
+    <!-- Generic -->
+    <string name="generic_continue">Continue</string>
+
+    <!-- Date/time format -->
+    <string name="date_format_dd_MMMM_yyyy_at_HH_mm">dd MMMM yyyy \'à\' HH:mm</string>
+
+    <!-- Home -->
+</resources>
