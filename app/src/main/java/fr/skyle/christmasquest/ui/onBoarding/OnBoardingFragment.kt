@@ -4,8 +4,10 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import androidx.activity.OnBackPressedCallback
+import fr.skyle.christmasquest.R
 import fr.skyle.christmasquest.base.fragment.AbstractBindingFragment
 import fr.skyle.christmasquest.databinding.OnBoardingFragmentBinding
+import fr.skyle.christmasquest.ext.navigate
 import fr.skyle.christmasquest.ext.popBackStack
 import fr.skyle.christmasquest.ui.onBoarding.adapter.OnBoardingPagerAdapter
 
@@ -51,10 +53,10 @@ class OnBoardingFragment : AbstractBindingFragment<OnBoardingFragmentBinding>() 
         })
 
         binding.buttonHomeContinue.setOnClickListener {
-            if (binding.viewPagerHome.currentItem < OnBoardingPagerAdapter.NUM_PAGES) {
+            if (binding.viewPagerHome.currentItem < OnBoardingPagerAdapter.NUM_PAGES - 1) {
                 binding.viewPagerHome.currentItem = binding.viewPagerHome.currentItem + 1
             } else {
-                // Start new fragment
+                navigate(R.id.navigation_rules)
             }
         }
     }

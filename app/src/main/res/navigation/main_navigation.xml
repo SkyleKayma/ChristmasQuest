@@ -8,7 +8,15 @@
     <fragment
         android:id="@+id/navigation_home"
         android:name="fr.skyle.christmasquest.ui.onBoarding.OnBoardingFragment"
-        android:label="Titre"
-        tools:layout="@layout/on_boarding_fragment" />
+        tools:layout="@layout/on_boarding_fragment">
+        <action
+            android:id="@+id/action_navigation_home_to_rulesFragment"
+            app:destination="@id/navigation_rules" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_rules"
+        android:name="fr.skyle.christmasquest.ui.rules.RulesFragment"
+        tools:layout="@layout/rules_fragment" />
 
 </navigation>

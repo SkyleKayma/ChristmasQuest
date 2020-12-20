@@ -16,4 +16,16 @@
     <string name="on_boarding_description_step_5">Comme tu peux le constater, ma hotte est vide !\nQuel drâme Ho Ho Ho !\n\nJe vais avoir besoin de toi pour finir de préparer les cadeaux !</string>
     <string name="on_boarding_description_step_6">Les cadeaux ci-dessus ne sont pas prêt !\n\nDépêche toi d\'aider les autres lutins !</string>
 
+    <!-- Rules -->
+    <string name="rules_title">Les règles et infos</string>
+    <string name="rules_description_1">1. Joue en équipe</string>
+    <string name="rules_description_2">2. Soit attentif aux moindres détails</string>
+    <string name="rules_description_3">3. Ouvre suffisamment ton esprit</string>
+    <string name="rules_description_4">4. L\'aventure a déjà commencée (Ho Ho Ho !)</string>
+    <string name="rules_description_5">5. Si tu bloques, ce n\'est pas la faute de l\'appli</string>
+    <string name="rules_description_6">6. Sauve Noël bien sûr !</string>
+    <string name="rules_description_7">7. L\'aventure n\'est finie que lorsque c\'est clairement annoncé !</string>
+
+    <!-- Join team -->
+
 </resources>

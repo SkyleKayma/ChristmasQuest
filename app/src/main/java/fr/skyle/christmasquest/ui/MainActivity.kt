@@ -30,7 +30,7 @@ class MainActivity : AppCompatActivity() {
     private fun setListeners() {
 
         findNavController(R.id.nav_host_fragment_main_activity).addOnDestinationChangedListener { _, destination, _ ->
-            if (destination.id == R.id.navigation_home) {
+            if (destination.id in listOf(R.id.navigation_home, R.id.navigation_rules)) {
                 binding.toolbarMain.toolbar.visibility = View.GONE
             } else {
                 binding.toolbarMain.toolbar.visibility = View.VISIBLE
