@@ -1,18 +1,18 @@
-package fr.skyle.christmasquest.ui.home
+package fr.skyle.christmasquest.ui.onBoarding
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import fr.skyle.christmasquest.base.fragment.AbstractBindingFragment
-import fr.skyle.christmasquest.databinding.HomeFragmentStep5Binding
+import fr.skyle.christmasquest.databinding.OnBoardingFragmentStep5Binding
 
-class HomeFragmentStep5 : AbstractBindingFragment<HomeFragmentStep5Binding>() {
+class OnBoardingFragmentStep5 : AbstractBindingFragment<OnBoardingFragmentStep5Binding>() {
 
     // --- Binding
     // ---------------------------------------------------
 
     override fun inflate(inflater: LayoutInflater) =
-        HomeFragmentStep5Binding.inflate(inflater)
+        OnBoardingFragmentStep5Binding.inflate(inflater)
 
     // --- Life cycle
     // ---------------------------------------------------

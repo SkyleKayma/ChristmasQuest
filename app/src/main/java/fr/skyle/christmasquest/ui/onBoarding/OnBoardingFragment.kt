@@ -1,21 +1,21 @@
-package fr.skyle.christmasquest.ui.home
+package fr.skyle.christmasquest.ui.onBoarding
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import androidx.activity.OnBackPressedCallback
 import fr.skyle.christmasquest.base.fragment.AbstractBindingFragment
-import fr.skyle.christmasquest.databinding.HomeFragmentBinding
+import fr.skyle.christmasquest.databinding.OnBoardingFragmentBinding
 import fr.skyle.christmasquest.ext.popBackStack
-import fr.skyle.christmasquest.ui.home.adapter.HomePagerAdapter
+import fr.skyle.christmasquest.ui.onBoarding.adapter.OnBoardingPagerAdapter
 
-class HomeFragment : AbstractBindingFragment<HomeFragmentBinding>() {
+class OnBoardingFragment : AbstractBindingFragment<OnBoardingFragmentBinding>() {
 
     // --- Binding
     // ---------------------------------------------------
 
     override fun inflate(inflater: LayoutInflater) =
-        HomeFragmentBinding.inflate(inflater)
+        OnBoardingFragmentBinding.inflate(inflater)
 
     // --- Life cycle
     // ---------------------------------------------------
@@ -39,7 +39,7 @@ class HomeFragment : AbstractBindingFragment<HomeFragmentBinding>() {
     // ---------------------------------------------------
 
     private fun setViewPager() {
-        val pagerAdapter = HomePagerAdapter(childFragmentManager, lifecycle)
+        val pagerAdapter = OnBoardingPagerAdapter(childFragmentManager, lifecycle)
         binding.viewPagerHome.adapter = pagerAdapter
     }
 
@@ -51,7 +51,7 @@ class HomeFragment : AbstractBindingFragment<HomeFragmentBinding>() {
         })
 
         binding.buttonHomeContinue.setOnClickListener {
-            if (binding.viewPagerHome.currentItem < HomePagerAdapter.NUM_PAGES) {
+            if (binding.viewPagerHome.currentItem < OnBoardingPagerAdapter.NUM_PAGES) {
                 binding.viewPagerHome.currentItem = binding.viewPagerHome.currentItem + 1
             } else {
                 // Start new fragment

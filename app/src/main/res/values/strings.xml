@@ -7,8 +7,13 @@
 
     <!-- Date/time format -->
     <string name="date_format_dd_MMMM_yyyy_at_HH_mm">dd MMMM yyyy \'à\' HH:mm</string>
-    <string name="home_description">Ahhhh ! Les cadeaux !\n\nNon ça ne va pas !\nRien ne va !\nRien n\'est prêt !\n\nMais que faites-vous !!\n\nAllez immédiatement donner un coup de main aux autres lutins ou bien Noël ne pourra pas se faire cette année !</string>
-    <string name="home_title">Joyeux Noël!</string>
 
     <!-- Home -->
+    <string name="on_boarding_description_step_1">Nous sommes tous d\'accord pour dire que Noël c\'est avant tout un sapin !</string>
+    <string name="on_boarding_description_step_2">Mais que s\'il y a des cadeaux dessous, c\'est encore mieux !</string>
+    <string name="on_boarding_description_step_3">Oh Oh Oh ! Il est adorable ! ... Ah non je ne parle pas de vous !</string>
+    <string name="on_boarding_description_step_4">Ca c\'est vous ! Et je vais avoir besoin de votre aide Ho Ho Ho !</string>
+    <string name="on_boarding_description_step_5">Comme tu peux le constater, ma hotte est vide !\nQuel drâme Ho Ho Ho !\n\nJe vais avoir besoin de toi pour finir de préparer les cadeaux !</string>
+    <string name="on_boarding_description_step_6">Les cadeaux ci-dessus ne sont pas prêt !\n\nDépêche toi d\'aider les autres lutins !</string>
+
 </resources>

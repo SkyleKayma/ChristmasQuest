@@ -7,8 +7,8 @@
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="fr.skyle.christmasquest.ui.home.HomeFragment"
+        android:name="fr.skyle.christmasquest.ui.onBoarding.OnBoardingFragment"
         android:label="Titre"
-        tools:layout="@layout/home_fragment" />
+        tools:layout="@layout/on_boarding_fragment" />
 
 </navigation>

@@ -8,11 +8,11 @@
     android:padding="20dp">
 
     <ImageView
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
         android:layout_marginBottom="24dp"
         android:adjustViewBounds="true"
-        android:src="@drawable/ic_christmas_hat"
+        android:src="@drawable/ic_christmas_tree_with_gifts"
         app:layout_constraintBottom_toTopOf="@id/viewSeparatorHomeStep1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -28,7 +28,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.3" />
+        app:layout_constraintVertical_bias="0.65" />
 
     <TextView
         android:layout_width="match_parent"
@@ -36,7 +36,7 @@
         android:layout_marginHorizontal="32dp"
         android:layout_marginTop="24dp"
         android:gravity="center"
-        android:text="@string/home_description"
+        android:text="@string/on_boarding_description_step_2"
         android:textAppearance="@style/AppTheme.TextAppearance.Christmas"
         android:textColor="@color/colorAccent"
         android:textSize="16sp"
