@@ -3,19 +3,20 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
     android:fillViewport="true">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorPrimaryDark"
         android:gravity="center"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:paddingHorizontal="32dp"
+        android:paddingVertical="20dp">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="32dp"
             android:layout_marginTop="24dp"
             android:gravity="center"
             android:text="@string/rules_title"
@@ -26,85 +27,76 @@
         <ImageView
             android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:layout_marginBottom="24dp"
+            android:layout_marginVertical="32dp"
             android:adjustViewBounds="true"
             android:src="@drawable/ic_christmas_card" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="32dp"
-            android:layout_marginTop="24dp"
             android:gravity="center"
             android:text="@string/rules_description_1"
-            android:textAppearance="@style/AppTheme.TextAppearance.Christmas"
+            android:textAppearance="@style/AppTheme.TextAppearance.Regular"
             android:textColor="@color/colorAccent"
             android:textSize="16sp" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="32dp"
             android:layout_marginTop="12dp"
             android:gravity="center"
             android:text="@string/rules_description_2"
-            android:textAppearance="@style/AppTheme.TextAppearance.Christmas"
+            android:textAppearance="@style/AppTheme.TextAppearance.Regular"
             android:textColor="@color/colorAccent"
             android:textSize="16sp" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="32dp"
             android:layout_marginTop="12dp"
             android:gravity="center"
             android:text="@string/rules_description_3"
-            android:textAppearance="@style/AppTheme.TextAppearance.Christmas"
+            android:textAppearance="@style/AppTheme.TextAppearance.Regular"
             android:textColor="@color/colorAccent"
             android:textSize="16sp" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="32dp"
             android:layout_marginTop="12dp"
             android:gravity="center"
             android:text="@string/rules_description_4"
-            android:textAppearance="@style/AppTheme.TextAppearance.Christmas"
+            android:textAppearance="@style/AppTheme.TextAppearance.Regular"
             android:textColor="@color/colorAccent"
             android:textSize="16sp" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="32dp"
             android:layout_marginTop="12dp"
             android:gravity="center"
             android:text="@string/rules_description_5"
-            android:textAppearance="@style/AppTheme.TextAppearance.Christmas"
+            android:textAppearance="@style/AppTheme.TextAppearance.Regular"
             android:textColor="@color/colorAccent"
             android:textSize="16sp" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="32dp"
             android:layout_marginTop="12dp"
             android:gravity="center"
             android:text="@string/rules_description_6"
-            android:textAppearance="@style/AppTheme.TextAppearance.Christmas"
+            android:textAppearance="@style/AppTheme.TextAppearance.Regular"
             android:textColor="@color/colorAccent"
             android:textSize="16sp" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="32dp"
             android:layout_marginTop="12dp"
             android:gravity="center"
             android:text="@string/rules_description_7"
-            android:textAppearance="@style/AppTheme.TextAppearance.Christmas"
+            android:textAppearance="@style/AppTheme.TextAppearance.Regular"
             android:textColor="@color/colorAccent"
             android:textSize="16sp" />
 
@@ -114,6 +106,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
             android:text="@string/generic_start"
+            android:textAllCaps="true"
+            android:textAppearance="@style/AppTheme.TextAppearance.Regular"
             app:icon="@drawable/ic_timer"
             app:iconGravity="end"
             app:iconTint="@color/colorAccent" />

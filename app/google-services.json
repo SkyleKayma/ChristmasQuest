@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "686615421563",
+    "firebase_url": "https://christmasquest-9a4f5-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "christmasquest-9a4f5",
+    "storage_bucket": "christmasquest-9a4f5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:686615421563:android:d104a6f98fba9f893a78de",
+        "android_client_info": {
+          "package_name": "fr.skyle.christmasquest"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "686615421563-rakgabc9k0f79u23r0g54bnp2la3jjc6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB6Z2Co_G0ngfdr-0neOpc4Fcpxa3JBMaI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "686615421563-rakgabc9k0f79u23r0g54bnp2la3jjc6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:686615421563:android:39fce2d3f1f928d63a78de",
+        "android_client_info": {
+          "package_name": "fr.skyle.christmasquest.debug"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "686615421563-rakgabc9k0f79u23r0g54bnp2la3jjc6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB6Z2Co_G0ngfdr-0neOpc4Fcpxa3JBMaI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "686615421563-rakgabc9k0f79u23r0g54bnp2la3jjc6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

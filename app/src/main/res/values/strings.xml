@@ -4,17 +4,18 @@
     <!-- Generic -->
     <string name="generic_next">Suivant</string>
     <string name="generic_start">Commencer</string>
+    <string name="generic_error">Une erreur est survenue</string>
 
     <!-- Date/time format -->
     <string name="date_format_dd_MMMM_yyyy_at_HH_mm">dd MMMM yyyy \'à\' HH:mm</string>
 
     <!-- Home -->
     <string name="on_boarding_description_step_1">Nous sommes tous d\'accord pour dire que Noël c\'est avant tout un sapin !</string>
-    <string name="on_boarding_description_step_2">Mais que s\'il y a des cadeaux dessous, c\'est encore mieux !</string>
+    <string name="on_boarding_description_step_2">Mais que si des cadeaux se trouvent dessous, c\'est encore mieux !</string>
     <string name="on_boarding_description_step_3">Oh Oh Oh ! Il est adorable ! ... Ah non je ne parle pas de vous !</string>
     <string name="on_boarding_description_step_4">Ca c\'est vous ! Et je vais avoir besoin de votre aide Ho Ho Ho !</string>
-    <string name="on_boarding_description_step_5">Comme tu peux le constater, ma hotte est vide !\nQuel drâme Ho Ho Ho !\n\nJe vais avoir besoin de toi pour finir de préparer les cadeaux !</string>
-    <string name="on_boarding_description_step_6">Les cadeaux ci-dessus ne sont pas prêt !\n\nDépêche toi d\'aider les autres lutins !</string>
+    <string name="on_boarding_description_step_5">Comme vous pouvez le constater, ma hotte est vide !\nQuel drâme Ho Ho Ho !\n\nJe vais avoir besoin de vous pour finir de préparer les cadeaux !</string>
+    <string name="on_boarding_description_step_6">Les cadeaux ci-dessus ne sont pas prêt !\n\nDépêche toi d\'aider les autres lutins !\n\nOu bien Noël ne pourra pas se faire !</string>
 
     <!-- Rules -->
     <string name="rules_title">Les règles et infos</string>
@@ -26,6 +27,32 @@
     <string name="rules_description_6">6. Sauve Noël bien sûr !</string>
     <string name="rules_description_7">7. L\'aventure n\'est finie que lorsque c\'est clairement annoncé !</string>
 
-    <!-- Join team -->
+    <!-- Login Register -->
+    <string name="login_register_title">Nous avons besoin de savoir qui vous êtes !</string>
+    <string name="login_register_subtitle">Si vous possédez déjà un numéro de matricule, connectez-vous avec, sinon créez-en un nouveau !</string>
+    <string name="login_register_login">Me connecter</string>
+    <string name="login_register_register">M\'inscrire</string>
+
+    <!-- Login  -->
+    <string name="login_title">Donc nous sommes censés vous connaître ?</string>
+    <string name="login_description_before">Nous allons vérifer si votre numéro de matricule de Lutin est connu des services du Père Noël</string>
+    <string name="login_description_after_fail">Numéro non reconnu, veuillez compléter l\'identification ci-dessous</string>
+    <string name="login_description_after_success">Par chance vous avez déjà travaillé pour nous de manière bénévole et SANS Y AVOIR ETE FORCE, veuillez complétez votre code d\'accès</string>
+    <string name="login_pseudo">Pseudo</string>
+    <string name="login_password">Password</string>
+    <string name="login_check">Valider</string>
+
+    <!-- Join Team -->
+    <string name="join_team_fill_team_number">Renseigne le numéro de ton équipe:</string>
+    <string name="join_team_explanation">(Cette étape est nécessaire pour que les découvertes de tes camarades comptent aussi pour toi !)</string>
+    <string name="join_team_hint_example">Exemple: 1</string>
+    <string name="join_team_validate">Rejoindre cette équipe</string>
+    <string name="login_login_success">Heureux de vous revoir parmis nous !</string>
+    <string name="login_login_fail">Aucun compte ne correspond à ces informations</string>
+    <string name="register_title">Bienvenue parmi nous nouvelle recrue !</string>
+    <string name="register_subtitle">Veuillez saisir ci-dessous le matricule que vous souhaitez utiliser</string>
+    <string name="register_pseudo_already_exist_error">Un compte existe déjà avec ce pseudo</string>
+    <string name="register_register_success">Bienvenue parmi nous !</string>
+
 
 </resources>

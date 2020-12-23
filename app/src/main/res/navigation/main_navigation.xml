@@ -17,6 +17,35 @@
     <fragment
         android:id="@+id/navigation_rules"
         android:name="fr.skyle.christmasquest.ui.rules.RulesFragment"
-        tools:layout="@layout/rules_fragment" />
+        tools:layout="@layout/rules_fragment">
+
+        <action
+            android:id="@+id/action_navigation_rules_to_navigation_login_register"
+            app:destination="@id/navigation_login_register" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_login_register"
+        android:name="fr.skyle.christmasquest.ui.loginRegister.LoginRegisterFragment"
+        tools:layout="@layout/login_register_fragment">
+
+        <action
+            android:id="@+id/action_navigation_login_register_to_navigation_login"
+            app:destination="@id/navigation_login" />
+        <action
+            android:id="@+id/action_navigation_login_register_to_navigation_register"
+            app:destination="@id/navigation_register" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_login"
+        android:name="fr.skyle.christmasquest.ui.login.LoginFragment"
+        app:popUpTo="@id/navigation_login_register"
+        app:popUpToInclusive="true"
+        tools:layout="@layout/login_fragment" />
+
+    <fragment
+        android:id="@+id/navigation_register"
+        android:name="fr.skyle.christmasquest.ui.register.RegisterFragment" />
 
 </navigation>

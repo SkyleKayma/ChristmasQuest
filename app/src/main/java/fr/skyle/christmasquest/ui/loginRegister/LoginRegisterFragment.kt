@@ -1,20 +1,21 @@
-package fr.skyle.christmasquest.ui.rules
+package fr.skyle.christmasquest.ui.loginRegister
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import fr.skyle.christmasquest.R
 import fr.skyle.christmasquest.base.fragment.AbstractBindingFragment
-import fr.skyle.christmasquest.databinding.RulesFragmentBinding
+import fr.skyle.christmasquest.databinding.LoginRegisterFragmentBinding
 import fr.skyle.christmasquest.ext.navigate
 
-class RulesFragment : AbstractBindingFragment<RulesFragmentBinding>() {
+
+class LoginRegisterFragment : AbstractBindingFragment<LoginRegisterFragmentBinding>() {
 
     // --- Binding
     // ---------------------------------------------------
 
     override fun inflate(inflater: LayoutInflater) =
-        RulesFragmentBinding.inflate(inflater)
+        LoginRegisterFragmentBinding.inflate(inflater)
 
     // --- Life cycle
     // ---------------------------------------------------
@@ -29,8 +30,12 @@ class RulesFragment : AbstractBindingFragment<RulesFragmentBinding>() {
     // ---------------------------------------------------
 
     private fun setListeners() {
-        binding.buttonRulesStart.setOnClickListener {
-            navigate(R.id.navigation_login_register)
+        binding.buttonLoginRegisterLogin.setOnClickListener {
+            navigate(R.id.navigation_login)
+        }
+
+        binding.buttonLoginRegisterRegister.setOnClickListener {
+            navigate(R.id.navigation_register)
         }
     }
 }

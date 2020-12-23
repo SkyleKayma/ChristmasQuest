@@ -17,7 +17,7 @@
         android:layout_gravity="end|bottom"
         android:layout_margin="20dp"
         android:text="@string/generic_next"
-        app:icon="@drawable/ic_arrow_right"
+        app:icon="@drawable/ic_arrow_right_full"
         app:iconGravity="end"
         app:iconTint="@color/colorAccent" />
 
