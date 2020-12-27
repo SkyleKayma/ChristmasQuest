@@ -19,7 +19,9 @@ import fr.skyle.christmasquest.R
 import fr.skyle.christmasquest.base.fragment.AbstractBindingFragment
 import fr.skyle.christmasquest.databinding.RegisterFragmentBinding
 import fr.skyle.christmasquest.ext.fromIOToMain
+import fr.skyle.christmasquest.ext.navigate
 import fr.skyle.christmasquest.model.Player
+import fr.skyle.christmasquest.util.PreferencesUtils
 import io.reactivex.rxjava3.core.Observable
 import org.koin.android.ext.android.inject
 import timber.log.Timber
@@ -27,6 +29,7 @@ import timber.log.Timber
 
 class RegisterFragment : AbstractBindingFragment<RegisterFragmentBinding>() {
 
+    private val prefUtils by inject<PreferencesUtils>()
     private val dbRef by inject<DatabaseReference>()
 
     // --- Binding
@@ -95,13 +98,16 @@ class RegisterFragment : AbstractBindingFragment<RegisterFragmentBinding>() {
     }
 
     private fun registerPlayer(pseudo: String, password: String) {
-        val task = dbRef.child(PLAYERS).push().setValue(Player(pseudo, password))
+        val id = dbRef.child(PLAYERS).push()
+        val task = id.setValue(Player(pseudo, password))
 
         task.addOnCompleteListener {
             if (it.isSuccessful) {
+                prefUtils.playerInfo(PreferencesUtils.PlayerInfo(id.key ?: "", pseudo))
                 snackbar(getString(R.string.register_register_success), Snackbar.LENGTH_SHORT)
+                navigate(R.id.navigation_rules)
             } else {
-                snackbar("Ce pseudo est déjà utilisé", Snackbar.LENGTH_SHORT)
+                snackbar(R.string.register_pseudo_already_exist_error, Snackbar.LENGTH_SHORT)
             }
         }
     }

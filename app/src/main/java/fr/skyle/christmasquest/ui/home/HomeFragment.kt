@@ -1,16 +1,14 @@
-package fr.skyle.christmasquest.ui.rules
+package fr.skyle.christmasquest.ui.home
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
-import fr.skyle.christmasquest.R
 import fr.skyle.christmasquest.base.fragment.AbstractBindingFragment
-import fr.skyle.christmasquest.databinding.RulesFragmentBinding
-import fr.skyle.christmasquest.ext.navigate
+import fr.skyle.christmasquest.databinding.HomeFragmentBinding
 import fr.skyle.christmasquest.util.PreferencesUtils
 import org.koin.android.ext.android.inject
 
-class RulesFragment : AbstractBindingFragment<RulesFragmentBinding>() {
+class HomeFragment : AbstractBindingFragment<HomeFragmentBinding>() {
 
     private val prefUtils by inject<PreferencesUtils>()
 
@@ -18,7 +16,7 @@ class RulesFragment : AbstractBindingFragment<RulesFragmentBinding>() {
     // ---------------------------------------------------
 
     override fun inflate(inflater: LayoutInflater) =
-        RulesFragmentBinding.inflate(inflater)
+        HomeFragmentBinding.inflate(inflater)
 
     // --- Life cycle
     // ---------------------------------------------------
@@ -26,16 +24,6 @@ class RulesFragment : AbstractBindingFragment<RulesFragmentBinding>() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        setListeners()
-    }
 
-    // --- Specific job
-    // ---------------------------------------------------
-
-    private fun setListeners() {
-        binding.buttonRulesStart.setOnClickListener {
-            prefUtils.areRulesShown(true)
-            navigate(R.id.navigation_home)
-        }
     }
 }

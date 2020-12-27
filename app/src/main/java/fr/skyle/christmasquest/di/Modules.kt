@@ -4,6 +4,7 @@ import coil.ImageLoader
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 import fr.skyle.christmasquest.util.DateUtils
+import fr.skyle.christmasquest.util.PreferencesUtils
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.qualifier.named
 import org.koin.dsl.module
@@ -26,6 +27,10 @@ object Modules {
     val utilsModule = module {
         single {
             DateUtils(androidContext())
+        }
+
+        single {
+            PreferencesUtils(androidContext())
         }
     }
 

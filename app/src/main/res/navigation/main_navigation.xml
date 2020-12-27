@@ -3,14 +3,24 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/navigation_home">
+    app:startDestination="@+id/navigation_splash">
 
     <fragment
-        android:id="@+id/navigation_home"
+        android:id="@+id/navigation_splash"
+        android:name="fr.skyle.christmasquest.ui.splash.SplashFragment"
+        android:label="SplashFragment"
+        tools:layout="@layout/splash_fragment">
+        <action
+            android:id="@+id/action_navigation_splash_to_navigation_on_boarding"
+            app:destination="@id/navigation_on_boarding" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_on_boarding"
         android:name="fr.skyle.christmasquest.ui.onBoarding.OnBoardingFragment"
         tools:layout="@layout/on_boarding_fragment">
         <action
-            android:id="@+id/action_navigation_home_to_rulesFragment"
+            android:id="@+id/action_navigation_on_boarding_to_rulesFragment"
             app:destination="@id/navigation_rules" />
     </fragment>
 
@@ -42,10 +52,25 @@
         android:name="fr.skyle.christmasquest.ui.login.LoginFragment"
         app:popUpTo="@id/navigation_login_register"
         app:popUpToInclusive="true"
-        tools:layout="@layout/login_fragment" />
+        tools:layout="@layout/login_fragment">
+        <action
+            android:id="@+id/action_navigation_login_to_homeFragment"
+            app:destination="@id/navigation_home" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_register"
-        android:name="fr.skyle.christmasquest.ui.register.RegisterFragment" />
+        android:name="fr.skyle.christmasquest.ui.register.RegisterFragment"
+        tools:layout="@layout/register_fragment">
+        <action
+            android:id="@+id/action_navigation_register_to_homeFragment"
+            app:destination="@id/navigation_home" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="fr.skyle.christmasquest.ui.home.HomeFragment"
+        android:label="HomeFragment"
+        tools:layout="@layout/home_fragment" />
 
 </navigation>

@@ -8,19 +8,78 @@
     tools:background="@color/colorPrimaryDark">
 
     <ImageView
-        android:layout_width="300dp"
-        android:layout_height="300dp"
+        android:id="@+id/imageViewOnBoardingStep4"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginEnd="4dp"
         android:layout_marginBottom="24dp"
         android:adjustViewBounds="true"
-        android:src="@drawable/ic_lutin2"
-        app:layout_constraintBottom_toTopOf="@id/viewSeparatorHomeStep1"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:src="@drawable/ic_lutin"
+        app:layout_constraintBottom_toTopOf="@id/textViewOnBoardingStep4Lutin"
+        app:layout_constraintEnd_toStartOf="@id/guidelineOnBoardingStep4"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0" />
 
+    <TextView
+        android:id="@+id/textViewOnBoardingStep4Lutin"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:gravity="center"
+        android:text="Lutin"
+        android:textAppearance="@style/AppTheme.TextAppearance.Christmas"
+        android:textColor="@color/colorAccent"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@id/viewSeparatorOnBoardingStep4"
+        app:layout_constraintEnd_toEndOf="@id/imageViewOnBoardingStep4"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@id/imageViewOnBoardingStep4"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineOnBoardingStep4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <ImageView
+        android:id="@+id/imageViewOnBoardingStep4Lutinette"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginBottom="24dp"
+        android:adjustViewBounds="true"
+        android:src="@drawable/ic_lutin_girl"
+        app:layout_constraintBottom_toTopOf="@id/textViewOnBoardingStep4Lutinette"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@id/guidelineOnBoardingStep4"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/textViewOnBoardingStep4Lutinette"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:gravity="center"
+        android:text="Lutinette"
+        android:textAppearance="@style/AppTheme.TextAppearance.Christmas"
+        android:textColor="@color/colorAccent"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@id/viewSeparatorOnBoardingStep4"
+        app:layout_constraintEnd_toEndOf="@id/imageViewOnBoardingStep4Lutinette"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@id/imageViewOnBoardingStep4Lutinette"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
     <View
-        android:id="@+id/viewSeparatorHomeStep1"
+        android:id="@+id/viewSeparatorOnBoardingStep4"
         android:layout_width="100dp"
         android:layout_height="2dp"
         android:background="@color/colorAccent"
@@ -43,7 +102,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/viewSeparatorHomeStep1"
+        app:layout_constraintTop_toBottomOf="@id/viewSeparatorOnBoardingStep4"
         app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

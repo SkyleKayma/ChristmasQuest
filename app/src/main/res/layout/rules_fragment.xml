@@ -70,36 +70,6 @@
             android:textColor="@color/colorAccent"
             android:textSize="16sp" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:gravity="center"
-            android:text="@string/rules_description_5"
-            android:textAppearance="@style/AppTheme.TextAppearance.Regular"
-            android:textColor="@color/colorAccent"
-            android:textSize="16sp" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:gravity="center"
-            android:text="@string/rules_description_6"
-            android:textAppearance="@style/AppTheme.TextAppearance.Regular"
-            android:textColor="@color/colorAccent"
-            android:textSize="16sp" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:gravity="center"
-            android:text="@string/rules_description_7"
-            android:textAppearance="@style/AppTheme.TextAppearance.Regular"
-            android:textColor="@color/colorAccent"
-            android:textSize="16sp" />
-
         <Button
             android:id="@+id/buttonRulesStart"
             android:layout_width="wrap_content"

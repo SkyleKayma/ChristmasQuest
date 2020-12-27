@@ -19,7 +19,9 @@ import fr.skyle.christmasquest.R
 import fr.skyle.christmasquest.base.fragment.AbstractBindingFragment
 import fr.skyle.christmasquest.databinding.LoginFragmentBinding
 import fr.skyle.christmasquest.ext.fromIOToMain
+import fr.skyle.christmasquest.ext.navigate
 import fr.skyle.christmasquest.model.Player
+import fr.skyle.christmasquest.util.PreferencesUtils
 import io.reactivex.rxjava3.core.Observable
 import org.koin.android.ext.android.inject
 import timber.log.Timber
@@ -27,6 +29,7 @@ import timber.log.Timber
 
 class LoginFragment : AbstractBindingFragment<LoginFragmentBinding>() {
 
+    private val prefUtils by inject<PreferencesUtils>()
     private val dbRef by inject<DatabaseReference>()
 
     // --- Binding
@@ -78,12 +81,15 @@ class LoginFragment : AbstractBindingFragment<LoginFragmentBinding>() {
 
         dbRef.child(PLAYERS).addListenerForSingleValueEvent(object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
-                val result = dataSnapshot.getValue<HashMap<String,Player>>() ?: hashMapOf()
-                val player = result.values.filter { it.name == pseudo && it.password == password }.firstOrNull()
+                val result = dataSnapshot.getValue<HashMap<String, Player>>() ?: hashMapOf()
+                val players = result.filter {
+                    it.value.name == pseudo && it.value.password == password
+                }.toList().firstOrNull()
 
-                player?.let {
+                players?.let {
+                    prefUtils.playerInfo(PreferencesUtils.PlayerInfo(it.first, it.second.name))
                     snackbar(getString(R.string.login_login_success), Snackbar.LENGTH_SHORT)
-                    // TODO navigate to enter a game screen
+                    navigate(R.id.navigation_rules)
                 } ?: snackbar(getString(R.string.login_login_fail), Snackbar.LENGTH_SHORT)
             }
 

@@ -38,9 +38,11 @@ class MainActivity : AppCompatActivity() {
             binding.toolbarMain.toolbar.setNavigationIcon(R.drawable.ic_arrow_left)
 
             if (destination.id in listOf(
-                    R.id.navigation_home,
+                    R.id.navigation_on_boarding,
                     R.id.navigation_rules,
-                    R.id.navigation_login_register
+                    R.id.navigation_login_register,
+                    R.id.navigation_login,
+                    R.id.navigation_register
                 )
             ) {
                 binding.toolbarMain.toolbar.visibility = View.GONE

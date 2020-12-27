@@ -13,14 +13,14 @@
         android:layout_marginBottom="24dp"
         android:adjustViewBounds="true"
         android:src="@drawable/ic_snowman"
-        app:layout_constraintBottom_toTopOf="@id/viewSeparatorHomeStep1"
+        app:layout_constraintBottom_toTopOf="@id/viewSeparatorOnBoardingStep3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0" />
 
     <View
-        android:id="@+id/viewSeparatorHomeStep1"
+        android:id="@+id/viewSeparatorOnBoardingStep3"
         android:layout_width="100dp"
         android:layout_height="2dp"
         android:background="@color/colorAccent"
@@ -43,7 +43,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/viewSeparatorHomeStep1"
+        app:layout_constraintTop_toBottomOf="@id/viewSeparatorOnBoardingStep3"
         app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

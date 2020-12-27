@@ -10,8 +10,12 @@ import fr.skyle.christmasquest.databinding.OnBoardingFragmentBinding
 import fr.skyle.christmasquest.ext.navigate
 import fr.skyle.christmasquest.ext.popBackStack
 import fr.skyle.christmasquest.ui.onBoarding.adapter.OnBoardingPagerAdapter
+import fr.skyle.christmasquest.util.PreferencesUtils
+import org.koin.android.ext.android.inject
 
 class OnBoardingFragment : AbstractBindingFragment<OnBoardingFragmentBinding>() {
+
+    private val prefUtils by inject<PreferencesUtils>()
 
     // --- Binding
     // ---------------------------------------------------
@@ -56,7 +60,8 @@ class OnBoardingFragment : AbstractBindingFragment<OnBoardingFragmentBinding>() 
             if (binding.viewPagerHome.currentItem < OnBoardingPagerAdapter.NUM_PAGES - 1) {
                 binding.viewPagerHome.currentItem = binding.viewPagerHome.currentItem + 1
             } else {
-                navigate(R.id.navigation_rules)
+                prefUtils.isOnBoardingShown(true)
+                navigate(R.id.navigation_login_register)
             }
         }
     }
