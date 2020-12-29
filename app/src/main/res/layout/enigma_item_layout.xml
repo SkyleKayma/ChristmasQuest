@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:parentTag="androidx.cardview.widget.CardView">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_background_enigma"
+        android:orientation="vertical"
+        android:padding="12dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textViewEnigmaItemNumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="@style/AppTheme.TextAppearance.Christmas"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="16sp"
+                    tools:text="@string/enigma_number" />
+
+                <TextView
+                    android:id="@+id/textViewEnigmaItemTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="@style/AppTheme.TextAppearance.Christmas"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="24sp"
+                    tools:text="Le pôle Nord" />
+
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/imageViewEnigmaItemCompletion"
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:src="@drawable/ic_star_uncomplete" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textViewEnigmaItemSubtitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:textAppearance="@style/AppTheme.TextAppearance.Regular"
+            android:textColor="@color/colorAccent"
+            android:textSize="13sp"
+            app:drawableEndCompat="@drawable/ic_arrow_right"
+            tools:text="Mais où peut-il bien être caché ce Père Noel !" />
+
+    </LinearLayout>
+
+</merge>

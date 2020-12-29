@@ -5,32 +5,26 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.google.android.material.snackbar.Snackbar
-import com.google.firebase.database.DataSnapshot
-import com.google.firebase.database.DatabaseError
-import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.ValueEventListener
-import com.google.firebase.database.ktx.getValue
 import com.jakewharton.rxbinding4.widget.textChangeEvents
 import fr.openium.kotlintools.ext.hideKeyboard
 import fr.openium.kotlintools.ext.snackbar
 import fr.openium.kotlintools.ext.textTrimmed
-import fr.skyle.christmasquest.PLAYERS
 import fr.skyle.christmasquest.R
 import fr.skyle.christmasquest.base.fragment.AbstractBindingFragment
 import fr.skyle.christmasquest.databinding.RegisterFragmentBinding
 import fr.skyle.christmasquest.ext.fromIOToMain
 import fr.skyle.christmasquest.ext.navigate
-import fr.skyle.christmasquest.model.Player
-import fr.skyle.christmasquest.util.PreferencesUtils
+import fr.skyle.christmasquest.utils.PreferencesUtils
 import io.reactivex.rxjava3.core.Observable
 import org.koin.android.ext.android.inject
+import org.koin.androidx.viewmodel.ext.android.viewModel
 import timber.log.Timber
 
 
 class RegisterFragment : AbstractBindingFragment<RegisterFragmentBinding>() {
 
+    private val model by viewModel<RegisterViewModel>()
     private val prefUtils by inject<PreferencesUtils>()
-    private val dbRef by inject<DatabaseReference>()
 
     // --- Binding
     // ---------------------------------------------------
@@ -79,33 +73,22 @@ class RegisterFragment : AbstractBindingFragment<RegisterFragmentBinding>() {
         val pseudo = binding.textInputEditTextRegisterPseudo.textTrimmed()
         val password = binding.textInputEditTextRegisterPassword.textTrimmed()
 
-        dbRef.child(PLAYERS).addListenerForSingleValueEvent(object : ValueEventListener {
-            override fun onDataChange(dataSnapshot: DataSnapshot) {
-                val result = dataSnapshot.getValue<HashMap<String, Player>>() ?: hashMapOf()
-                val player = result.values.filter { it.name == pseudo }.firstOrNull()
+        val playerId = model.checkIfPlayerExist(pseudo, password)
 
-                player?.let {
-                    snackbar(getString(R.string.register_pseudo_already_exist_error), Snackbar.LENGTH_SHORT)
-                } ?: registerPlayer(pseudo, password)
-            }
-
-            override fun onCancelled(error: DatabaseError) {
-                // Failed to read value
-                Timber.e("Error getting player in db $error")
-                snackbar(getString(R.string.generic_error), Snackbar.LENGTH_SHORT)
-            }
-        })
+        playerId?.let {
+            snackbar(getString(R.string.register_pseudo_already_exist_error), Snackbar.LENGTH_SHORT)
+        } ?: registerPlayer(pseudo, password)
     }
 
     private fun registerPlayer(pseudo: String, password: String) {
-        val id = dbRef.child(PLAYERS).push()
-        val task = id.setValue(Player(pseudo, password))
+        val playerId = model.generatePlayerId()
+        val task = model.registerPlayer(playerId, pseudo, password)
 
         task.addOnCompleteListener {
             if (it.isSuccessful) {
-                prefUtils.playerInfo(PreferencesUtils.PlayerInfo(id.key ?: "", pseudo))
-                snackbar(getString(R.string.register_register_success), Snackbar.LENGTH_SHORT)
-                navigate(R.id.navigation_rules)
+                prefUtils.playerId(playerId)
+                snackbar(getString(R.string.register_success), Snackbar.LENGTH_SHORT)
+                navigate(RegisterFragmentDirections.actionNavigationRegisterToNavigationRules())
             } else {
                 snackbar(R.string.register_pseudo_already_exist_error, Snackbar.LENGTH_SHORT)
             }

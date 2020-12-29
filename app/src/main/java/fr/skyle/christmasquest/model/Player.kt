@@ -1,6 +1,8 @@
 package fr.skyle.christmasquest.model
 
 data class Player(
-    val name: String = "",
-    val password: String = ""
+    var id: String? = null,
+    var name: String = "",
+    var password: String = "",
+    var achievements: HashMap<String, Boolean> = hashMapOf()
 )

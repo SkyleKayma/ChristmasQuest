@@ -5,32 +5,27 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.google.android.material.snackbar.Snackbar
-import com.google.firebase.database.DataSnapshot
-import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.ValueEventListener
-import com.google.firebase.database.ktx.getValue
 import com.jakewharton.rxbinding4.widget.textChangeEvents
 import fr.openium.kotlintools.ext.hideKeyboard
 import fr.openium.kotlintools.ext.snackbar
 import fr.openium.kotlintools.ext.textTrimmed
-import fr.skyle.christmasquest.PLAYERS
 import fr.skyle.christmasquest.R
 import fr.skyle.christmasquest.base.fragment.AbstractBindingFragment
 import fr.skyle.christmasquest.databinding.LoginFragmentBinding
 import fr.skyle.christmasquest.ext.fromIOToMain
 import fr.skyle.christmasquest.ext.navigate
-import fr.skyle.christmasquest.model.Player
-import fr.skyle.christmasquest.util.PreferencesUtils
+import fr.skyle.christmasquest.utils.PreferencesUtils
 import io.reactivex.rxjava3.core.Observable
 import org.koin.android.ext.android.inject
+import org.koin.androidx.viewmodel.ext.android.viewModel
 import timber.log.Timber
 
 
 class LoginFragment : AbstractBindingFragment<LoginFragmentBinding>() {
 
+    private val model by viewModel<LoginViewModel>()
     private val prefUtils by inject<PreferencesUtils>()
-    private val dbRef by inject<DatabaseReference>()
 
     // --- Binding
     // ---------------------------------------------------
@@ -79,26 +74,16 @@ class LoginFragment : AbstractBindingFragment<LoginFragmentBinding>() {
         val pseudo = binding.textInputEditTextLoginPseudo.textTrimmed()
         val password = binding.textInputEditTextLoginPassword.textTrimmed()
 
-        dbRef.child(PLAYERS).addListenerForSingleValueEvent(object : ValueEventListener {
-            override fun onDataChange(dataSnapshot: DataSnapshot) {
-                val result = dataSnapshot.getValue<HashMap<String, Player>>() ?: hashMapOf()
-                val players = result.filter {
-                    it.value.name == pseudo && it.value.password == password
-                }.toList().firstOrNull()
+        val playerId = model.checkIfPlayerExist(pseudo, password)
 
-                players?.let {
-                    prefUtils.playerInfo(PreferencesUtils.PlayerInfo(it.first, it.second.name))
-                    snackbar(getString(R.string.login_login_success), Snackbar.LENGTH_SHORT)
-                    navigate(R.id.navigation_rules)
-                } ?: snackbar(getString(R.string.login_login_fail), Snackbar.LENGTH_SHORT)
-            }
+        playerId?.let {
+            prefUtils.playerId(it)
 
-            override fun onCancelled(error: DatabaseError) {
-                // Failed to read value
-                Timber.e("Error getting player in db $error")
-                snackbar(getString(R.string.generic_error), Snackbar.LENGTH_SHORT)
-            }
-        })
+            // TODO send event to main activity to show snackbar
+
+            snackbar(getString(R.string.login_success), Snackbar.LENGTH_SHORT)
+            navigate(LoginFragmentDirections.actionNavigationLoginToNavigationRules())
+        } ?: snackbar(getString(R.string.login_no_account_found), Snackbar.LENGTH_SHORT)
     }
 
     private fun updateButtonEnableState() {

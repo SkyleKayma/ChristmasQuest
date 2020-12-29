@@ -1,4 +1,4 @@
-package fr.skyle.christmasquest.util
+package fr.skyle.christmasquest.utils
 
 import android.content.Context
 import fr.skyle.christmasquest.R

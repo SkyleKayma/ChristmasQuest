@@ -4,13 +4,12 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import androidx.activity.OnBackPressedCallback
-import fr.skyle.christmasquest.R
 import fr.skyle.christmasquest.base.fragment.AbstractBindingFragment
 import fr.skyle.christmasquest.databinding.OnBoardingFragmentBinding
 import fr.skyle.christmasquest.ext.navigate
 import fr.skyle.christmasquest.ext.popBackStack
 import fr.skyle.christmasquest.ui.onBoarding.adapter.OnBoardingPagerAdapter
-import fr.skyle.christmasquest.util.PreferencesUtils
+import fr.skyle.christmasquest.utils.PreferencesUtils
 import org.koin.android.ext.android.inject
 
 class OnBoardingFragment : AbstractBindingFragment<OnBoardingFragmentBinding>() {
@@ -61,7 +60,7 @@ class OnBoardingFragment : AbstractBindingFragment<OnBoardingFragmentBinding>() 
                 binding.viewPagerHome.currentItem = binding.viewPagerHome.currentItem + 1
             } else {
                 prefUtils.isOnBoardingShown(true)
-                navigate(R.id.navigation_login_register)
+                navigate(OnBoardingFragmentDirections.actionNavigationOnBoardingToNavigationLoginRegister())
             }
         }
     }

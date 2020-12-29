@@ -5,6 +5,12 @@
     <string name="generic_next">Suivant</string>
     <string name="generic_start">Commencer</string>
     <string name="generic_error">Une erreur est survenue</string>
+    <string name="generic_pseudo">Pseudo</string>
+    <string name="generic_password">Mot de passe</string>
+    <string name="generic_check">Valider</string>
+
+    <!-- Generic Achievement -->
+    <string name="achievement_easter_egg_gift">Bravo, tu as trouvé l\EasterEgg des cadeaux !</string>
 
     <!-- Date/time format -->
     <string name="date_format_dd_MMMM_yyyy_at_HH_mm">dd MMMM yyyy \'à\' HH:mm</string>
@@ -22,7 +28,8 @@
     <string name="rules_description_1">1. Soit attentif aux moindres détails</string>
     <string name="rules_description_2">2. Ouvre suffisamment ton esprit</string>
     <string name="rules_description_3">3. Si tu bloques, ce n\'est pas la faute de l\'appli</string>
-    <string name="rules_description_4">4. Sauve Noël bien sûr !</string>
+    <string name="rules_description_4">4. Certains détails ne seront visibles qu\'une seule fois !</string>
+    <string name="rules_description_5">5. Sauve Noël bien sûr !</string>
 
     <!-- Login Register -->
     <string name="login_register_title">Nous avons besoin de savoir qui vous êtes !</string>
@@ -35,21 +42,25 @@
     <string name="login_description_before">Nous allons vérifer si votre numéro de matricule de Lutin est connu des services du Père Noël</string>
     <string name="login_description_after_fail">Numéro non reconnu, veuillez compléter l\'identification ci-dessous</string>
     <string name="login_description_after_success">Par chance vous avez déjà travaillé pour nous de manière bénévole et SANS Y AVOIR ETE FORCE, veuillez complétez votre code d\'accès</string>
-    <string name="login_pseudo">Pseudo</string>
-    <string name="login_password">Password</string>
-    <string name="login_check">Valider</string>
+    <string name="login_success">Heureux de vous revoir parmis nous !</string>
+    <string name="login_no_account_found">Aucun compte ne correspond à ces informations</string>
 
-    <!-- Join Team -->
-    <string name="join_team_fill_team_number">Renseigne le numéro de ton équipe:</string>
-    <string name="join_team_explanation">(Cette étape est nécessaire pour que les découvertes de tes camarades comptent aussi pour toi !)</string>
-    <string name="join_team_hint_example">Exemple: 1</string>
-    <string name="join_team_validate">Rejoindre cette équipe</string>
-    <string name="login_login_success">Heureux de vous revoir parmis nous !</string>
-    <string name="login_login_fail">Aucun compte ne correspond à ces informations</string>
+    <!-- Register -->
     <string name="register_title">Bienvenue parmi nous nouvelle recrue !</string>
     <string name="register_subtitle">Veuillez saisir ci-dessous le matricule que vous souhaitez utiliser</string>
     <string name="register_pseudo_already_exist_error">Un compte existe déjà avec ce pseudo</string>
-    <string name="register_register_success">Bienvenue parmi nous !</string>
+    <string name="register_success">Bienvenue parmi nous !</string>
 
+    <!-- Home -->
+    <string name="home_task_to_do">Les tâches à accomplir</string>
+    <string name="home_enigma_title_1">Le Pôle Nord</string>
+    <string name="home_enigma_subtitle_1">Mais où peut-il bien être caché ce Père Noel !</string>
+    <string name="home_enigma_title_2">La Fouille</string>
+    <string name="home_enigma_subtitle_2">Tout le monde a le droit d\'être un peu curieux !</string>
+    <string name="home_enigma_title_3">Au Charbon</string>
+    <string name="home_enigma_subtitle_3">Il me semble que certains ont besoin d\'aide !</string>
+
+    <!-- Enigma -->
+    <string name="enigma_number">Enigme n°%s:</string>
 
 </resources>
