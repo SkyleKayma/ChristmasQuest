@@ -6,6 +6,7 @@ import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.ValueEventListener
 import com.google.firebase.database.ktx.getValue
 import fr.skyle.christmasquest.ACHIEVEMENTS
+import fr.skyle.christmasquest.event.eventAchievementsLoaded
 import fr.skyle.christmasquest.model.Achievement
 import timber.log.Timber
 
@@ -24,6 +25,8 @@ class AchievementsUtils(dbRef: DatabaseReference) {
                 achievements = achievementsMap.onEach {
                     it.value.id = it.key
                 }.map { it.value }
+
+                eventAchievementsLoaded.onNext(true)
             }
 
             override fun onCancelled(error: DatabaseError) {

@@ -108,4 +108,7 @@ dependencies {
     // --- Firebase
     implementation platform('com.google.firebase:firebase-bom:26.2.0')
     implementation 'com.google.firebase:firebase-database-ktx'
+
+    // --- Circular Progress Button
+    implementation 'br.com.simplepass:loading-button-android:2.2.0'
 }

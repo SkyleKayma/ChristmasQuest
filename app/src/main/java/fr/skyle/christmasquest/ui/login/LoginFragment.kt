@@ -5,11 +5,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.google.android.material.snackbar.Snackbar
-import com.google.firebase.database.DatabaseReference
 import com.jakewharton.rxbinding4.widget.textChangeEvents
-import fr.openium.kotlintools.ext.hideKeyboard
-import fr.openium.kotlintools.ext.snackbar
-import fr.openium.kotlintools.ext.textTrimmed
+import fr.openium.kotlintools.ext.*
 import fr.skyle.christmasquest.R
 import fr.skyle.christmasquest.base.fragment.AbstractBindingFragment
 import fr.skyle.christmasquest.databinding.LoginFragmentBinding
@@ -65,6 +62,7 @@ class LoginFragment : AbstractBindingFragment<LoginFragmentBinding>() {
         )
 
         binding.buttonLoginValidate.setOnClickListener {
+            binding.buttonLoginValidate.startAnimation()
             requireActivity().hideKeyboard()
             checkIfPlayerExist()
         }
@@ -78,9 +76,6 @@ class LoginFragment : AbstractBindingFragment<LoginFragmentBinding>() {
 
         playerId?.let {
             prefUtils.playerId(it)
-
-            // TODO send event to main activity to show snackbar
-
             snackbar(getString(R.string.login_success), Snackbar.LENGTH_SHORT)
             navigate(LoginFragmentDirections.actionNavigationLoginToNavigationRules())
         } ?: snackbar(getString(R.string.login_no_account_found), Snackbar.LENGTH_SHORT)
@@ -92,5 +87,17 @@ class LoginFragment : AbstractBindingFragment<LoginFragmentBinding>() {
 
         binding.buttonLoginValidate.isEnabled =
             isPseudoValid && isPasswordValid
+
+        binding.buttonLoginValidate.apply {
+            if (isEnabled) {
+                background =
+                    requireContext().getDrawableCompat(R.drawable.shape_background_button_loader)
+                setTextColor(requireContext().getColorCompat(R.color.colorAccent))
+            } else {
+                background =
+                    requireContext().getDrawableCompat(R.drawable.shape_background_button_loader_disabled)
+                setTextColor(requireContext().getColorCompat(R.color.colorGrey))
+            }
+        }
     }
 }

@@ -18,7 +18,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="20dp"
+                android:layout_height="25dp"
                 android:background="@color/colorYellow"
                 android:paddingVertical="4dp">
 
@@ -27,60 +27,60 @@
                     android:layout_height="1dp"
                     android:layout_weight="1" />
 
-                <ImageView
+                <fr.skyle.christmasquest.view.SecretTinselLightBulbItemLayout
+                    android:id="@+id/secretTinselLightBulbItem1"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_tinsel_part_2" />
+                    android:layout_height="wrap_content" />
 
                 <View
                     android:layout_width="0dp"
                     android:layout_height="1dp"
                     android:layout_weight="1" />
 
-                <ImageView
+                <fr.skyle.christmasquest.view.SecretTinselLightBulbItemLayout
+                    android:id="@+id/secretTinselLightBulbItem2"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_tinsel_part_2" />
+                    android:layout_height="wrap_content" />
 
                 <View
                     android:layout_width="0dp"
                     android:layout_height="1dp"
                     android:layout_weight="1" />
 
-                <ImageView
+                <fr.skyle.christmasquest.view.SecretTinselLightBulbItemLayout
+                    android:id="@+id/secretTinselLightBulbItem3"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_tinsel_part_2" />
+                    android:layout_height="wrap_content" />
 
                 <View
                     android:layout_width="0dp"
                     android:layout_height="1dp"
                     android:layout_weight="1" />
 
-                <ImageView
+                <fr.skyle.christmasquest.view.SecretTinselLightBulbItemLayout
+                    android:id="@+id/secretTinselLightBulbItem4"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_tinsel_part_2" />
+                    android:layout_height="wrap_content" />
 
                 <View
                     android:layout_width="0dp"
                     android:layout_height="1dp"
                     android:layout_weight="1" />
 
-                <ImageView
+                <fr.skyle.christmasquest.view.SecretTinselLightBulbItemLayout
+                    android:id="@+id/secretTinselLightBulbItem5"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_tinsel_part_2" />
+                    android:layout_height="wrap_content" />
 
                 <View
                     android:layout_width="0dp"
                     android:layout_height="1dp"
                     android:layout_weight="1" />
 
-                <ImageView
+                <fr.skyle.christmasquest.view.SecretTinselLightBulbItemLayout
+                    android:id="@+id/secretTinselLightBulbItem6"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_tinsel_part_2" />
+                    android:layout_height="wrap_content" />
 
                 <View
                     android:layout_width="0dp"
@@ -98,36 +98,30 @@
                     android:layout_height="1dp"
                     android:layout_weight="1" />
 
-                <ImageView
-                    android:id="@+id/imageViewHomeEasterEgg1"
+                <fr.skyle.christmasquest.view.SecretStarItemLayout
+                    android:id="@+id/secretStarItem1"
                     android:layout_width="50dp"
-                    android:layout_height="wrap_content"
-                    android:adjustViewBounds="true"
-                    android:src="@drawable/ic_star_enigma_uncomplete" />
+                    android:layout_height="wrap_content" />
 
                 <View
                     android:layout_width="0dp"
                     android:layout_height="1dp"
                     android:layout_weight="1" />
 
-                <ImageView
-                    android:id="@+id/imageViewHomeEasterEgg2"
+                <fr.skyle.christmasquest.view.SecretStarItemLayout
+                    android:id="@+id/secretStarItem2"
                     android:layout_width="75dp"
-                    android:layout_height="wrap_content"
-                    android:adjustViewBounds="true"
-                    android:src="@drawable/ic_star_enigma_uncomplete" />
+                    android:layout_height="wrap_content" />
 
                 <View
                     android:layout_width="0dp"
                     android:layout_height="1dp"
                     android:layout_weight="1" />
 
-                <ImageView
-                    android:id="@+id/imageViewHomeEasterEgg3"
+                <fr.skyle.christmasquest.view.SecretStarItemLayout
+                    android:id="@+id/secretStarItem3"
                     android:layout_width="50dp"
-                    android:layout_height="wrap_content"
-                    android:adjustViewBounds="true"
-                    android:src="@drawable/ic_star_enigma_uncomplete" />
+                    android:layout_height="wrap_content" />
 
                 <View
                     android:layout_width="0dp"
@@ -191,72 +185,78 @@
                     android:layout_height="1dp"
                     android:layout_weight="1" />
 
-                <ImageView
-                    android:id="@+id/imageViewHomeGift1"
+                <fr.skyle.christmasquest.view.SecretGiftItemLayout
+                    android:id="@+id/secretGiftItem1"
                     android:layout_width="40dp"
                     android:layout_height="wrap_content"
-                    android:adjustViewBounds="true"
-                    android:src="@drawable/ic_gift_1" />
+                    app:imageIdNotResolved="@drawable/ic_gift_1"
+                    app:imageIdResolved="@drawable/ic_gift_1_open"
+                    app:value="1" />
 
                 <View
                     android:layout_width="0dp"
                     android:layout_height="1dp"
                     android:layout_weight="1" />
 
-                <ImageView
-                    android:id="@+id/imageViewHomeGift2"
+                <fr.skyle.christmasquest.view.SecretGiftItemLayout
+                    android:id="@+id/secretGiftItem2"
                     android:layout_width="40dp"
                     android:layout_height="wrap_content"
-                    android:adjustViewBounds="true"
-                    android:src="@drawable/ic_gift_2" />
+                    app:imageIdNotResolved="@drawable/ic_gift_2"
+                    app:imageIdResolved="@drawable/ic_gift_2_open"
+                    app:value="2" />
 
                 <View
                     android:layout_width="0dp"
                     android:layout_height="1dp"
                     android:layout_weight="1" />
 
-                <ImageView
-                    android:id="@+id/imageViewHomeGift3"
+                <fr.skyle.christmasquest.view.SecretGiftItemLayout
+                    android:id="@+id/secretGiftItem3"
                     android:layout_width="40dp"
                     android:layout_height="wrap_content"
-                    android:adjustViewBounds="true"
-                    android:src="@drawable/ic_gift_3" />
+                    app:imageIdNotResolved="@drawable/ic_gift_3"
+                    app:imageIdResolved="@drawable/ic_gift_3_open"
+                    app:value="3" />
 
                 <View
                     android:layout_width="0dp"
                     android:layout_height="1dp"
                     android:layout_weight="1" />
 
-                <ImageView
-                    android:id="@+id/imageViewHomeGift4"
+                <fr.skyle.christmasquest.view.SecretGiftItemLayout
+                    android:id="@+id/secretGiftItem4"
                     android:layout_width="40dp"
                     android:layout_height="wrap_content"
-                    android:adjustViewBounds="true"
-                    android:src="@drawable/ic_gift_4" />
+                    app:imageIdNotResolved="@drawable/ic_gift_4"
+                    app:imageIdResolved="@drawable/ic_gift_4_open"
+                    app:value="4" />
 
                 <View
                     android:layout_width="0dp"
                     android:layout_height="1dp"
                     android:layout_weight="1" />
 
-                <ImageView
-                    android:id="@+id/imageViewHomeGift5"
+                <fr.skyle.christmasquest.view.SecretGiftItemLayout
+                    android:id="@+id/secretGiftItem5"
                     android:layout_width="40dp"
                     android:layout_height="wrap_content"
-                    android:adjustViewBounds="true"
-                    android:src="@drawable/ic_gift_5" />
+                    app:imageIdNotResolved="@drawable/ic_gift_5"
+                    app:imageIdResolved="@drawable/ic_gift_5_open"
+                    app:value="5" />
 
                 <View
                     android:layout_width="0dp"
                     android:layout_height="1dp"
                     android:layout_weight="1" />
 
-                <ImageView
-                    android:id="@+id/imageViewHomeGift6"
+                <fr.skyle.christmasquest.view.SecretGiftItemLayout
+                    android:id="@+id/secretGiftItem6"
                     android:layout_width="40dp"
                     android:layout_height="wrap_content"
-                    android:adjustViewBounds="true"
-                    android:src="@drawable/ic_gift_6" />
+                    app:imageIdNotResolved="@drawable/ic_gift_6"
+                    app:imageIdResolved="@drawable/ic_gift_6_open"
+                    app:value="6" />
 
                 <View
                     android:layout_width="0dp"

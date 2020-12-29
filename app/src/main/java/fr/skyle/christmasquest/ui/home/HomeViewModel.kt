@@ -10,8 +10,9 @@ class HomeViewModel(
 ) : AbstractViewModel() {
 
     fun addAchievementToPlayer(achievementId: String) {
-        if (!achievementRepository.checkIfPlayerAlreadyHaveAchievement(achievementId, playerRepository.getAchievementsForPlayer())) {
-            achievementRepository.addAchievement(achievementId)
-        }
+        achievementRepository.addAchievement(achievementId)
     }
+
+    fun checkIfPlayerHaveAchievement(achievementId: String): Boolean =
+        achievementRepository.checkIfPlayerAlreadyHaveAchievement(achievementId, playerRepository.getAchievementsForPlayer())
 }

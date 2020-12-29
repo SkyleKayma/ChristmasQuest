@@ -5,9 +5,15 @@ import android.view.LayoutInflater
 import android.view.View
 import fr.skyle.christmasquest.base.fragment.AbstractBindingFragment
 import fr.skyle.christmasquest.databinding.SplashFragmentBinding
+import fr.skyle.christmasquest.event.eventAchievementsLoaded
+import fr.skyle.christmasquest.event.eventPlayersLoaded
+import fr.skyle.christmasquest.ext.fromIOToMain
 import fr.skyle.christmasquest.ext.navigate
 import fr.skyle.christmasquest.utils.PreferencesUtils
+import io.reactivex.rxjava3.core.BackpressureStrategy
+import io.reactivex.rxjava3.core.Flowable
 import org.koin.android.ext.android.inject
+import timber.log.Timber
 
 class SplashFragment : AbstractBindingFragment<SplashFragmentBinding>() {
 
@@ -25,8 +31,28 @@ class SplashFragment : AbstractBindingFragment<SplashFragmentBinding>() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // TODO wait for data to be recovered at least one time to go further
+        setListeners()
+    }
 
+    private fun setListeners() {
+        disposables.add(
+            Flowable.combineLatest(
+                eventPlayersLoaded.toFlowable(BackpressureStrategy.LATEST),
+                eventAchievementsLoaded.toFlowable(BackpressureStrategy.LATEST),
+                { playersLoaded, achievementsLoaded ->
+                    playersLoaded to achievementsLoaded
+                }
+            ).fromIOToMain().subscribe({
+                if (it.first && it.second) {
+                    goToNextScreen()
+                }
+            }, {
+                Timber.e(it, "Error waiting for data to load")
+            })
+        )
+    }
+
+    private fun goToNextScreen() {
         when {
             !prefUtils.isOnBoardingShown() ->
                 navigate(SplashFragmentDirections.actionNavigationSplashToNavigationOnBoarding())

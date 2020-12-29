@@ -6,6 +6,7 @@ import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.ValueEventListener
 import com.google.firebase.database.ktx.getValue
 import fr.skyle.christmasquest.PLAYERS
+import fr.skyle.christmasquest.event.eventPlayersLoaded
 import fr.skyle.christmasquest.model.Player
 import timber.log.Timber
 
@@ -24,6 +25,8 @@ class PlayerUtils(dbRef: DatabaseReference) {
                 players = playersMap.onEach {
                     it.value.id = it.key
                 }.map { it.value }
+
+                eventPlayersLoaded.onNext(true)
             }
 
             override fun onCancelled(error: DatabaseError) {

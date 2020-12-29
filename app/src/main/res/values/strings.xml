@@ -10,7 +10,12 @@
     <string name="generic_check">Valider</string>
 
     <!-- Generic Achievement -->
-    <string name="achievement_easter_egg_gift">Bravo, tu as trouvé l\EasterEgg des cadeaux !</string>
+    <string name="achievement_enigma_first">Bravo, tu as terminé la 1ère énigme !</string>
+    <string name="achievement_enigma_second">Bravo, tu as terminé la 2ème énigme !</string>
+    <string name="achievement_enigma_third">Bravo, tu as terminé la 3ème énigme !</string>
+    <string name="achievement_secret_gift">Bravo, tu as trouvé le secret des cadeaux !</string>
+    <string name="achievement_secret_tinsel">Bravo, tu as réussi à rallumer la guirlande !</string>
+    <string name="achievement_secret_star">Bravo, tu as réussi à raviver toutes les étoiles !</string>
 
     <!-- Date/time format -->
     <string name="date_format_dd_MMMM_yyyy_at_HH_mm">dd MMMM yyyy \'à\' HH:mm</string>

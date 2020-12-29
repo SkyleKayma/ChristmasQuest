@@ -64,6 +64,7 @@ class RegisterFragment : AbstractBindingFragment<RegisterFragmentBinding>() {
         )
 
         binding.buttonRegisterValidate.setOnClickListener {
+            binding.buttonRegisterValidate.startAnimation()
             requireActivity().hideKeyboard()
             checkIfPlayerAlreadyExist()
         }

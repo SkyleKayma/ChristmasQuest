@@ -3,10 +3,19 @@
     <attr name="appNumber" format="string" />
     <attr name="appTitle" format="string" />
     <attr name="appSubtitle" format="string" />
+    <attr name="imageIdResolved" format="reference" />
+    <attr name="imageIdNotResolved" format="reference" />
+    <attr name="value" format="integer" />
 
     <declare-styleable name="EnigmaItemLayout">
         <attr name="appNumber" />
         <attr name="appTitle" />
         <attr name="appSubtitle" />
+    </declare-styleable>
+
+    <declare-styleable name="SecretGiftItemLayout">
+        <attr name="imageIdResolved" />
+        <attr name="imageIdNotResolved" />
+        <attr name="value" />
     </declare-styleable>
 </resources>

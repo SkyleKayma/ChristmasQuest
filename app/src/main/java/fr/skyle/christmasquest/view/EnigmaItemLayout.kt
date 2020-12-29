@@ -13,12 +13,24 @@ class EnigmaItemLayout(context: Context, attrs: AttributeSet? = null) : CardView
     private var binding: EnigmaItemLayoutBinding =
         EnigmaItemLayoutBinding.inflate(LayoutInflater.from(context), this)
 
+    var listener: OnStarClickedListener? = null
+    private var isResolved: Boolean = false
+
     init {
         // Set style
         cardElevation = dip(2)
         radius = dip(8)
 
+        // Attr
         computeAttribute(attrs)
+
+        // Listeners
+        binding.imageViewEnigmaItemCompletion.setOnClickListener {
+            if (isResolved) {
+                setResolved()
+                listener?.onStarClicked()
+            }
+        }
     }
 
     private fun computeAttribute(attrs: AttributeSet?) {
@@ -41,8 +53,17 @@ class EnigmaItemLayout(context: Context, attrs: AttributeSet? = null) : CardView
         }
     }
 
-    fun setResolved() {
+    private fun setResolved() {
+        isResolved = true
         binding.imageViewEnigmaItemCompletion.setImageResource(R.drawable.ic_star_complete)
         binding.textViewEnigmaItemSubtitle.setCompoundDrawables(null, null, null, null)
+    }
+
+    interface OnStarClickedListener {
+
+        /**
+         * Called each time the star is clicked
+         */
+        fun onStarClicked()
     }
 }
