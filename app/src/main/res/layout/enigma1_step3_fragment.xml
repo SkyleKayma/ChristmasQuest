@@ -98,7 +98,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
-            android:hint="@string/enigma1_step3_hint">
+            android:hint="@string/generic_your_answer">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/textInputEditTextEnigma1Step3"

@@ -8,6 +8,7 @@
     <string name="generic_pseudo">Pseudo</string>
     <string name="generic_password">Mot de passe</string>
     <string name="generic_check">Valider</string>
+    <string name="generic_your_answer">Votre réponse</string>
 
     <!-- Generic Achievement -->
     <string name="achievement_enigma_first">Bravo, tu as terminé la 1ère énigme !</string>
@@ -80,7 +81,7 @@
     <string name="enigma1_step2_no_flash">Pour cette étape il fallait activer le flash de votre smartphone. Cependant le votre n\'en a pas. Par conséquent, vous pouvez cliquer sur le bouton ci-dessous pour passer à l\'étape suivante !</string>
 
     <!-- Enigma 1 Step 3 -->
-    <string name="enigma1_step3_title">Enigme 1: Dernière étape</string>
+    <string name="enigma1_step3_title">Enigme 1: 3ème étape</string>
     <string name="enigma1_step3_text">Vous êtes devant la porte du repaire du Père Noël, mais il n’y a ni poignée ni sonnette.\nDevant la porte se trouve le calendrier de l’avant du Père Noël.\nDerrière ce calendrier se trouve la liste de mots suivante:</string>
     <string name="enigma1_step3_word_1">SAMARITAIN</string>
     <string name="enigma1_step3_word_2">RUDIMENTAIRE</string>
@@ -89,7 +90,6 @@
     <string name="enigma1_step3_word_5">CHIMERIQUE</string>
     <string name="enigma1_step3_word_6">MAJEUR</string>
     <string name="enigma1_step3_text_2">Il y a un 7ème emplacement vide, quel mot seriez-vous tenter d\'écrire pour compléter la liste ?\n(Plusieurs réponses possibles)</string>
-    <string name="enigma1_step3_hint">Mot pour compléter</string>
     <string name="enigma1_step3_answer_invalid">Le mot que vous avez choisi ne convient pas !</string>
 
     <!-- Enigma 2 Step 1 -->
@@ -108,6 +108,18 @@
 
     <!-- Enigma 2 Step 3 -->
     <string name="enigma2_step3_title">Enigme 3: 3ème étape</string>
+    <string name="enigma2_step3_text">Il y en a des choses plutôt intéressantes parmi toute cette paperasse ! Même des documents historiques, mais pourquoi sont-ils tous rassemblés ici ?</string>
+    <string name="enigma2_step3_text_choice_1">Charlemagne est sacré empereur d\'occident à Rome</string>
+    <string name="enigma2_step3_text_choice_2">Jonction du tunnel de service sous la Manche</string>
+    <string name="enigma2_step3_text_choice_3">Début de la fin de l\'URSS en 1991</string>
+    <string name="enigma2_step3_text_choice_4">Naissance de Jésus Christ </string>
+    <string name="enigma2_step3_text_choice_5">Premier numéro du journal le Monde en 1944</string>
+    <string name="enigma2_step3_text_choice_6">Abolition de l\'esclavage aux États-Unis</string>
+    <string name="enigma2_step3_text_choice_7">Inauguration du Viaduc de Millau en 2004</string>
+    <string name="enigma2_step3_text_choice_8">Premier lancement d\'essai de la fusée Ariane en 1979</string>
+    <string name="enigma2_step3_text_choice_9">Washington est choisie pour être la capitale des États-Unis</string>
+    <string name="enigma2_step3_text_choice_10">Pierre et Marie Curie découvre le radium</string>
+    <string name="enigma2_step3_answer_invalid">Ce n\'est pas la réponse attendue !</string>
 
     <!-- Enigma 3 Step 1 -->
     <string name="enigma3_step1_title">Enigme 3: 1ère étape</string>
