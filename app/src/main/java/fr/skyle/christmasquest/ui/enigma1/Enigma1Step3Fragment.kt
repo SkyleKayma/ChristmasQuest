@@ -70,6 +70,7 @@ class Enigma1Step3Fragment : AbstractBindingFragment<Enigma1Step3FragmentBinding
 
     private fun checkIfTextEnteredIsValid(): Boolean =
         binding.textInputEditTextEnigma1Step3.textTrimmed().contains(TEXT_TO_CONTAINS, true)
+                || binding.textInputEditTextEnigma1Step3.textTrimmed().contains(TEXT_TO_CONTAINS_2, true)
 
     private fun goToNextScreen() {
         navigate(Enigma1Step3FragmentDirections.actionNavigationEnigma1Step3ToNavigationHome())
@@ -77,5 +78,6 @@ class Enigma1Step3Fragment : AbstractBindingFragment<Enigma1Step3FragmentBinding
 
     companion object {
         private const val TEXT_TO_CONTAINS = "ven"
+        private const val TEXT_TO_CONTAINS_2 = "vén"
     }
 }

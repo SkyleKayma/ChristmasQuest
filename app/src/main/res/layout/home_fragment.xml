@@ -19,8 +19,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="25dp"
-                android:background="@color/colorYellow"
-                android:paddingVertical="4dp">
+                android:background="@color/colorYellow">
 
                 <View
                     android:layout_width="0dp"

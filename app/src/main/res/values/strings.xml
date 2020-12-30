@@ -23,17 +23,15 @@
 
     <!-- Home -->
     <string name="on_boarding_description_step_1">Nous sommes tous d\'accord pour dire que Noël c\'est avant tout un sapin !</string>
-    <string name="on_boarding_description_step_2">Mais que si des cadeaux se trouvent dessous, c\'est encore mieux !</string>
+    <string name="on_boarding_description_step_2">Mais si des cadeaux se trouvent dessous, c\'est encore mieux !</string>
     <string name="on_boarding_description_step_3">Oh Oh Oh ! Il est adorable ! ... Ah non je ne parle pas de vous !</string>
-    <string name="on_boarding_description_step_4">Vous ressemblez plutôt à ça ! Et je vais avoir besoin de votre aide !</string>
-    <string name="on_boarding_description_step_5">Comme vous pouvez le constater, ma hotte est vide !\nQuel drâme Ho Ho Ho !\n\nJe vais avoir besoin de vous pour finir de préparer les cadeaux !</string>
-    <string name="on_boarding_description_step_6">Les cadeaux ci-dessus ne sont pas prêt !\n\nDépêche toi d\'aider les autres lutins !\n\nOu bien Noël ne pourra pas se faire !</string>
+    <string name="on_boarding_description_step_4">Vous ressemblez plutôt à ça ! Et votre aide va être précieuse !</string>
 
     <!-- Rules -->
     <string name="rules_title">Les règles et infos</string>
     <string name="rules_description_1">1. Soit attentif aux moindres détails</string>
     <string name="rules_description_2">2. Ouvre suffisamment ton esprit</string>
-    <string name="rules_description_3">3. Si tu bloques, ce n\'est pas la faute de l\'appli</string>
+    <string name="rules_description_3">3. Une réponse peut servir à nouveau donc n\'oublie rien</string>
     <string name="rules_description_4">4. Certains détails ne seront visibles qu\'une seule fois !</string>
     <string name="rules_description_5">5. Sauve Noël bien sûr !</string>
 

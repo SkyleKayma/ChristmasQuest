@@ -17,6 +17,8 @@ val ENIGMA_3_STEP_1 = "enigma3Step1"
 val ENIGMA_3_STEP_2 = "enigma3Step2"
 val ENIGMA_3_STEP_3 = "enigma3Step3"
 
+val ENIGMA_NO_FLASHLIGHT = "enigmaNoFlashLight"
+
 val SECRET_CHRISTMAS_GIFT = "secretChristmasGift"
 val SECRET_CHRISTMAS_TINSEL = "secretChristmasTinsel"
 val SECRET_CHRISTMAS_STAR = "secretChristmasStar"

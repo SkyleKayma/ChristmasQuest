@@ -5,12 +5,18 @@ import android.hardware.camera2.CameraManager
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
+import fr.openium.kotlintools.ext.gone
 import fr.openium.kotlintools.ext.show
 import fr.skyle.christmasquest.ENIGMA_1_STEP_2
+import fr.skyle.christmasquest.ENIGMA_NO_FLASHLIGHT
 import fr.skyle.christmasquest.base.fragment.AbstractBindingFragment
 import fr.skyle.christmasquest.databinding.Enigma1Step2FragmentBinding
+import fr.skyle.christmasquest.event.eventPlayerAchievementsChanged
+import fr.skyle.christmasquest.ext.fromIOToMain
 import fr.skyle.christmasquest.ext.navigate
+import io.reactivex.rxjava3.core.BackpressureStrategy
 import org.koin.androidx.viewmodel.ext.android.viewModel
+import timber.log.Timber
 
 
 class Enigma1Step2Fragment : AbstractBindingFragment<Enigma1Step2FragmentBinding>() {
@@ -53,10 +59,28 @@ class Enigma1Step2Fragment : AbstractBindingFragment<Enigma1Step2FragmentBinding
 
     private fun setListeners() {
         if (requireContext().packageManager.hasSystemFeature(PackageManager.FEATURE_CAMERA_FLASH)) {
-            cameraManager.registerTorchCallback(torchCallback, null)
+            if (model.checkIfPlayerHaveAchievement(ENIGMA_NO_FLASHLIGHT)) {
+                binding.linearLayoutEnigma1Step2NoFlash.show()
+            } else {
+                cameraManager.registerTorchCallback(torchCallback, null)
+            }
         } else {
             binding.linearLayoutEnigma1Step2NoFlash.show()
         }
+
+        disposables.add(
+            eventPlayerAchievementsChanged.toFlowable(BackpressureStrategy.LATEST)
+                .fromIOToMain()
+                .subscribe({
+                    if (model.checkIfPlayerHaveAchievement(ENIGMA_NO_FLASHLIGHT)) {
+                        binding.linearLayoutEnigma1Step2NoFlash.show()
+                    } else {
+                        binding.linearLayoutEnigma1Step2NoFlash.gone()
+                    }
+                }, {
+                    Timber.e(it, "Error listening to player achievements changes")
+                })
+        )
     }
 
     private fun goToNextScreen() {
