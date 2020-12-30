@@ -15,7 +15,7 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class Enigma1Step2Fragment : AbstractBindingFragment<Enigma1Step2FragmentBinding>() {
 
-    private val model by viewModel<EnigmaStep1ViewModel>()
+    private val model by viewModel<Enigma1ViewModel>()
 
     private lateinit var cameraManager: CameraManager
     private val torchCallback = object : CameraManager.TorchCallback() {

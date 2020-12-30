@@ -60,11 +60,11 @@
     <!-- Home -->
     <string name="home_task_to_do">Les tâches à accomplir</string>
     <string name="home_enigma_title_1">Le Pôle Nord</string>
-    <string name="home_enigma_subtitle_1">Mais où peut-il bien être caché ce Père Noel !</string>
+    <string name="home_enigma_subtitle_1">Mais où peut-il bien être caché ce Père Noel ?</string>
     <string name="home_enigma_title_2">La Fouille</string>
     <string name="home_enigma_subtitle_2">Tout le monde a le droit d\'être un peu curieux !</string>
-    <string name="home_enigma_title_3">Au Charbon</string>
-    <string name="home_enigma_subtitle_3">Il me semble que certains ont besoin d\'aide !</string>
+    <string name="home_enigma_title_3">L\'Atelier</string>
+    <string name="home_enigma_subtitle_3">Votre aide semble être la bienvenue !</string>
     <string name="home_enigma_prerequisite_enigma_1">Tu dois d\'abord terminer la première énigme !</string>
     <string name="home_enigma_prerequisite_enigma_2">Tu dois d\'abord terminer la deuxième énigme !</string>
 
@@ -119,10 +119,22 @@
     <string name="enigma2_step3_text_choice_8">Premier lancement d\'essai de la fusée Ariane en 1979</string>
     <string name="enigma2_step3_text_choice_9">Washington est choisie pour être la capitale des États-Unis</string>
     <string name="enigma2_step3_text_choice_10">Pierre et Marie Curie découvre le radium</string>
-    <string name="enigma2_step3_answer_invalid">Ce n\'est pas la réponse attendue !</string>
+    <string name="enigma2_step3_answer_invalid">Raté ! Encore un petit effort, il doit bien y avoir une raison ?</string>
 
     <!-- Enigma 3 Step 1 -->
     <string name="enigma3_step1_title">Enigme 3: 1ère étape</string>
+    <string name="enigma3_step1_text">Vous voici dans l’usine à cadeaux! Les lutins se sont déjà attelés à la tâche !\n\nIls sont sacrément motivés, sans doute grâce à la musique qu’ils chantent à tue-tête.\n\nPour les aider, pouvez vous déterminer le nombre de cadeaux qu’il reste à fabriquer?</string>
+    <string name="enigma3_step1_answer_invalid">Ce n\'est pas le bon nombre de cadeaux !</string>
 
+    <!-- Enigma 3 Step 2 -->
+    <string name="enigma3_step2_title">Enigme 3: 2ème étape</string>
+    <string name="enigma3_step2_text">Belle trouvaille, ça en fait du boulot tout ça !\n\nVous voyez que les lutins commencent à fatiguer, ils ont besoin de retrouver le rythme. Certains disent que leur chanson fétiche cache un autre secret, celui de leur incroyable capacité de travail.\n\nSaurez-vous le décoder?</string>
+    <string name="enigma3_step2_answer_invalid">Non c\'est pas ça ! Cherche encore !</string>
+
+    <!-- Enigma 3 Step 3 -->
+    <string name="enigma3_step3_title">Enigme 3: 3ème étape</string>
+    <string name="enigma3_step3_text">Bien joué !\n\nAprès avoir ravitaillé les lutins en café, ils reprennent une cadence folle de fabrication.\n\nUne dernière chose reste à régler: où doit-on livrer ces 3165 cadeaux?</string>
+    <string name="enigma3_step3_answer_invalid">Je suis presque sûr que ce n\'est pas le bon lieu !</string>
+    <string name="enigma3_step3_location">45°46\'47.0\"N 3°05\'11.6\"E</string>
 
 </resources>

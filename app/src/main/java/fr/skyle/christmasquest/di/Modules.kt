@@ -5,8 +5,9 @@ import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 import fr.skyle.christmasquest.repository.AchievementRepository
 import fr.skyle.christmasquest.repository.PlayerRepository
-import fr.skyle.christmasquest.ui.enigma1.EnigmaStep1ViewModel
-import fr.skyle.christmasquest.ui.enigma2.EnigmaStep2ViewModel
+import fr.skyle.christmasquest.ui.enigma1.Enigma1ViewModel
+import fr.skyle.christmasquest.ui.enigma2.Enigma2ViewModel
+import fr.skyle.christmasquest.ui.enigma3.Enigma3ViewModel
 import fr.skyle.christmasquest.ui.home.HomeViewModel
 import fr.skyle.christmasquest.ui.login.LoginViewModel
 import fr.skyle.christmasquest.ui.register.RegisterViewModel
@@ -66,7 +67,8 @@ object Modules {
         viewModel { LoginViewModel(get()) }
         viewModel { RegisterViewModel(get()) }
         viewModel { HomeViewModel(get(), get()) }
-        viewModel { EnigmaStep1ViewModel(get(), get()) }
-        viewModel { EnigmaStep2ViewModel(get(), get()) }
+        viewModel { Enigma1ViewModel(get(), get()) }
+        viewModel { Enigma2ViewModel(get(), get()) }
+        viewModel { Enigma3ViewModel(get(), get()) }
     }
 }

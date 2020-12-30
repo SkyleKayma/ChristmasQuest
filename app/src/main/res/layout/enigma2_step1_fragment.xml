@@ -39,7 +39,7 @@
                 android:textColor="@color/colorAccent"
                 android:textSize="16sp" />
 
-            <fr.skyle.christmasquest.view.EnigmaWordToFillLayout
+            <fr.skyle.christmasquest.view.Enigma2WordToFillLayout
                 android:id="@+id/enigmaWordToFillEnigma2Step1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />

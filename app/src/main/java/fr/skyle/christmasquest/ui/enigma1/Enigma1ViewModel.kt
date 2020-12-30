@@ -1,11 +1,11 @@
-package fr.skyle.christmasquest.ui.enigma2
+package fr.skyle.christmasquest.ui.enigma1
 
 import com.google.android.gms.tasks.Task
 import fr.skyle.christmasquest.base.viewmodel.AbstractViewModel
 import fr.skyle.christmasquest.repository.AchievementRepository
 import fr.skyle.christmasquest.repository.PlayerRepository
 
-class EnigmaStep2ViewModel(
+class Enigma1ViewModel(
     private val achievementRepository: AchievementRepository,
     private val playerRepository: PlayerRepository
 ) : AbstractViewModel() {

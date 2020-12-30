@@ -18,7 +18,7 @@ import kotlin.math.sqrt
 
 class Enigma1Step1Fragment : AbstractBindingFragment<Enigma1Step1FragmentBinding>() {
 
-    private val model by viewModel<EnigmaStep1ViewModel>()
+    private val model by viewModel<Enigma1ViewModel>()
 
     private lateinit var sensorManager: SensorManager
     private var cpt = 0

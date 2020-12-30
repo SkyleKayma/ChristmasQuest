@@ -20,7 +20,7 @@ import timber.log.Timber
 
 class Enigma2Step3Fragment : AbstractBindingFragment<Enigma2Step3FragmentBinding>() {
 
-    private val model by viewModel<EnigmaStep2ViewModel>()
+    private val model by viewModel<Enigma2ViewModel>()
 
     private val events = listOf(
         R.string.enigma2_step3_text_choice_1,

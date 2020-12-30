@@ -29,7 +29,7 @@ import timber.log.Timber
 
 class Enigma2Step2Fragment : AbstractBindingFragment<Enigma2Step2FragmentBinding>() {
 
-    private val model by viewModel<EnigmaStep2ViewModel>()
+    private val model by viewModel<Enigma2ViewModel>()
 
     // --- Binding
     // ---------------------------------------------------

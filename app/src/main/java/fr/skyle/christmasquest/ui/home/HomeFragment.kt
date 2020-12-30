@@ -131,14 +131,13 @@ class HomeFragment : AbstractBindingFragment<HomeFragmentBinding>() {
         binding.homeEnigmaLayout3.setOnClickListener {
             if (checkIfPlayerAlreadyHaveAchievement(ENIGMA_1_STEP_3)) {
                 if (checkIfPlayerAlreadyHaveAchievement(ENIGMA_2_STEP_3)) {
-                    if (!checkIfPlayerAlreadyHaveAchievement(ENIGMA_3_STEP_3)) {
+                    if (!checkIfPlayerAlreadyHaveAchievement(ENIGMA_3_STEP_1)) {
                         navigate(HomeFragmentDirections.actionNavigationHomeToNavigationEnigma3Step1())
+                    } else if (!checkIfPlayerAlreadyHaveAchievement(ENIGMA_3_STEP_2)) {
+                        navigate(HomeFragmentDirections.actionNavigationHomeToNavigationEnigma3Step2())
+                    } else if (!checkIfPlayerAlreadyHaveAchievement(ENIGMA_3_STEP_3)) {
+                        navigate(HomeFragmentDirections.actionNavigationHomeToNavigationEnigma3Step3())
                     }
-//                    else if (!checkIfPlayerAlreadyHaveAchievement(ENIGMA_3_STEP_3)) {
-//                        navigate(HomeFragmentDirections.actionNavigationHomeToNavigationEnigma3Step2())
-//                    } else if (!checkIfPlayerAlreadyHaveAchievement(ENIGMA_3_STEP_3)) {
-//                        navigate(HomeFragmentDirections.actionNavigationHomeToNavigationEnigma3Step3())
-//                    }
                 } else snackbar(R.string.home_enigma_prerequisite_enigma_2, Snackbar.LENGTH_SHORT)
             } else snackbar(R.string.home_enigma_prerequisite_enigma_1, Snackbar.LENGTH_SHORT)
         }

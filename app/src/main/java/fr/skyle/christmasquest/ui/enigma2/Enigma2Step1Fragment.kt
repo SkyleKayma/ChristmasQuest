@@ -12,13 +12,12 @@ import fr.skyle.christmasquest.R
 import fr.skyle.christmasquest.base.fragment.AbstractBindingFragment
 import fr.skyle.christmasquest.databinding.Enigma2Step1FragmentBinding
 import fr.skyle.christmasquest.ext.navigate
-import fr.skyle.christmasquest.ui.enigma1.EnigmaStep1ViewModel
-import fr.skyle.christmasquest.view.EnigmaWordToFillLayout
+import fr.skyle.christmasquest.view.Enigma2WordToFillLayout
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class Enigma2Step1Fragment : AbstractBindingFragment<Enigma2Step1FragmentBinding>() {
 
-    private val model by viewModel<EnigmaStep2ViewModel>()
+    private val model by viewModel<Enigma2ViewModel>()
 
     // --- Binding
     // ---------------------------------------------------
@@ -62,7 +61,7 @@ class Enigma2Step1Fragment : AbstractBindingFragment<Enigma2Step1FragmentBinding
         binding.buttonEnigma2Step1LetterY.setOnClickListener(onButtonClickedListener)
 
         // Enigma item listener
-        binding.enigmaWordToFillEnigma2Step1.listener = object : EnigmaWordToFillLayout.OnFilledListener {
+        binding.enigmaWordToFillEnigma2Step1.listener = object : Enigma2WordToFillLayout.OnFilledListener {
             override fun onFilled() {
                 checkIfWordIsValid()
             }

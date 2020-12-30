@@ -4,13 +4,13 @@ import android.content.Context
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.widget.FrameLayout
-import fr.skyle.christmasquest.databinding.EnigmaWordToFillLayoutBinding
+import fr.skyle.christmasquest.databinding.Enigma2WordToFillLayoutBinding
 import fr.skyle.christmasquest.ui.enigma2.Enigma2Step1Fragment
 
-class EnigmaWordToFillLayout(context: Context, attrs: AttributeSet? = null) : FrameLayout(context, attrs) {
+class Enigma2WordToFillLayout(context: Context, attrs: AttributeSet? = null) : FrameLayout(context, attrs) {
 
-    private var binding: EnigmaWordToFillLayoutBinding =
-        EnigmaWordToFillLayoutBinding.inflate(LayoutInflater.from(context), this)
+    private var binding: Enigma2WordToFillLayoutBinding =
+        Enigma2WordToFillLayoutBinding.inflate(LayoutInflater.from(context), this)
 
     var listener: OnFilledListener? = null
     var actualWord = ""

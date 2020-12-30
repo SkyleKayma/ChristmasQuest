@@ -1,4 +1,4 @@
-package fr.skyle.christmasquest.ui.enigma1
+package fr.skyle.christmasquest.ui.enigma3
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,25 +8,24 @@ import com.jakewharton.rxbinding4.widget.textChanges
 import fr.openium.kotlintools.ext.hideKeyboard
 import fr.openium.kotlintools.ext.snackbar
 import fr.openium.kotlintools.ext.textTrimmed
-import fr.skyle.christmasquest.ENIGMA_1_STEP_3
+import fr.skyle.christmasquest.ENIGMA_3_STEP_2
 import fr.skyle.christmasquest.R
 import fr.skyle.christmasquest.base.fragment.AbstractBindingFragment
-import fr.skyle.christmasquest.databinding.Enigma1Step3FragmentBinding
+import fr.skyle.christmasquest.databinding.Enigma3Step2FragmentBinding
 import fr.skyle.christmasquest.ext.fromIOToMain
 import fr.skyle.christmasquest.ext.navigate
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import timber.log.Timber
 
+class Enigma3Step2Fragment : AbstractBindingFragment<Enigma3Step2FragmentBinding>() {
 
-class Enigma1Step3Fragment : AbstractBindingFragment<Enigma1Step3FragmentBinding>() {
-
-    private val model by viewModel<Enigma1ViewModel>()
+    private val model by viewModel<Enigma3ViewModel>()
 
     // --- Binding
     // ---------------------------------------------------
 
     override fun inflate(inflater: LayoutInflater) =
-        Enigma1Step3FragmentBinding.inflate(inflater)
+        Enigma3Step2FragmentBinding.inflate(inflater)
 
     // --- Life cycle
     // ---------------------------------------------------
@@ -41,41 +40,43 @@ class Enigma1Step3Fragment : AbstractBindingFragment<Enigma1Step3FragmentBinding
     // ---------------------------------------------------
 
     private fun setListeners() {
-        binding.buttonEnigma1Step3Check.setOnClickListener {
-            requireActivity().hideKeyboard()
-            if (checkIfTextEnteredIsValid()) {
-                if (!model.checkIfPlayerHaveAchievement(ENIGMA_1_STEP_3)) {
-                    model.addAchievementToPlayer(ENIGMA_1_STEP_3).addOnCompleteListener {
-                        goToNextScreen()
-                    }
-                } else goToNextScreen()
-            } else {
-                binding.textInputEditTextEnigma1Step3.setText("")
-                snackbar(R.string.enigma1_step3_answer_invalid, Snackbar.LENGTH_SHORT)
-            }
-        }
-
         disposables.add(
-            binding.textInputEditTextEnigma1Step3.textChanges()
+            binding.textInputEditTextEnigma3Step2.textChanges()
                 .fromIOToMain().subscribe({
                     updateButtonDisplay()
                 }, { Timber.e(it) })
         )
+
+        binding.buttonEnigma3Step2Check.setOnClickListener {
+            requireActivity().hideKeyboard()
+            if (checkIfTextEnteredIsValid()) {
+                if (!model.checkIfPlayerHaveAchievement(ENIGMA_3_STEP_2)) {
+                    model.addAchievementToPlayer(ENIGMA_3_STEP_2).addOnCompleteListener {
+                        goToNextScreen()
+                    }
+                } else goToNextScreen()
+            } else {
+                binding.textInputEditTextEnigma3Step2.setText("")
+                snackbar(R.string.enigma3_step2_answer_invalid, Snackbar.LENGTH_SHORT)
+            }
+        }
     }
 
     private fun updateButtonDisplay() {
-        binding.buttonEnigma1Step3Check.isEnabled =
-            binding.textInputEditTextEnigma1Step3.textTrimmed().isNotEmpty()
+        binding.buttonEnigma3Step2Check.isEnabled =
+            binding.textInputEditTextEnigma3Step2.textTrimmed().isNotEmpty()
     }
 
     private fun checkIfTextEnteredIsValid(): Boolean =
-        binding.textInputEditTextEnigma1Step3.textTrimmed().contains(TEXT_TO_CONTAINS, true)
+        binding.textInputEditTextEnigma3Step2.textTrimmed().contains(TEXT, true) ||
+                binding.textInputEditTextEnigma3Step2.textTrimmed().contains(TEXT2, true)
 
     private fun goToNextScreen() {
-        navigate(Enigma1Step3FragmentDirections.actionNavigationEnigma1Step3ToNavigationHome())
+        navigate(Enigma3Step2FragmentDirections.actionNavigationEnigma3Step2ToNavigationEnigma3Step3())
     }
 
     companion object {
-        private const val TEXT_TO_CONTAINS = "ven"
+        private const val TEXT = "Café"
+        private const val TEXT2 = "Cafe"
     }
 }
