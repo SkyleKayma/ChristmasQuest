@@ -64,8 +64,53 @@
     <string name="home_enigma_subtitle_2">Tout le monde a le droit d\'être un peu curieux !</string>
     <string name="home_enigma_title_3">Au Charbon</string>
     <string name="home_enigma_subtitle_3">Il me semble que certains ont besoin d\'aide !</string>
+    <string name="home_enigma_prerequisite_enigma_1">Tu dois d\'abord terminer la première énigme !</string>
+    <string name="home_enigma_prerequisite_enigma_2">Tu dois d\'abord terminer la deuxième énigme !</string>
 
-    <!-- Enigma -->
+    <!-- Enigma Item -->
     <string name="enigma_number">Enigme n°%s:</string>
+
+    <!-- Enigma 1 Step 1 -->
+    <string name="enigma1_step1_title">Enigme 1: 1ère étape</string>
+    <string name="enigma1_step1_text">Pour vous guider vers la maison du Père Noël, on vous a prêté une drôle de boussole: elle n’indique pas de direction !\n\nA vrai dire elle ressemble plus à une boule de neige qu’à une boussole…\n\nIl doit bien y avoir une façon de la faire fonctionner, non?</string>
+
+    <!-- Enigma 1 Step 2 -->
+    <string name="enigma1_step2_title">Enigme 1: 2ème étape</string>
+    <string name="enigma1_step2_text">Il commence à faire sombre…\n\nLa nuit tombe et au pôle nord il n’y a pas de lampadaires !\n\nVous ne voyez plus rien, comment faire pour vous repérer dans cette obscurité ... ?</string>
+    <string name="enigma1_step2_no_flash">Pour cette étape il fallait activer le flash de votre smartphone. Cependant le votre n\'en a pas. Par conséquent, vous pouvez cliquer sur le bouton ci-dessous pour passer à l\'étape suivante !</string>
+
+    <!-- Enigma 1 Step 3 -->
+    <string name="enigma1_step3_title">Enigme 1: Dernière étape</string>
+    <string name="enigma1_step3_text">Vous êtes devant la porte du repaire du Père Noël, mais il n’y a ni poignée ni sonnette.\nDevant la porte se trouve le calendrier de l’avant du Père Noël.\nDerrière ce calendrier se trouve la liste de mots suivante:</string>
+    <string name="enigma1_step3_word_1">SAMARITAIN</string>
+    <string name="enigma1_step3_word_2">RUDIMENTAIRE</string>
+    <string name="enigma1_step3_word_3">LUNATIQUE</string>
+    <string name="enigma1_step3_word_4">FLEMMARD</string>
+    <string name="enigma1_step3_word_5">CHIMERIQUE</string>
+    <string name="enigma1_step3_word_6">MAJEUR</string>
+    <string name="enigma1_step3_text_2">Il y a un 7ème emplacement vide, quel mot seriez-vous tenter d\'écrire pour compléter la liste ?\n(Plusieurs réponses possibles)</string>
+    <string name="enigma1_step3_hint">Mot pour compléter</string>
+    <string name="enigma1_step3_answer_invalid">Le mot que vous avez choisi ne convient pas !</string>
+
+    <!-- Enigma 2 Step 1 -->
+    <string name="enigma2_step1_title">Enigme 2: 1ère étape</string>
+    <string name="enigma2_step1_text">Vous venez d\'entrer dans la maison du Père Noël, mais tout est en vrac !\n\nVous commencez à faire un rangement rapide pour pouvoir avancer, lorsque vous tombez sur un document qui semble représenter un moyen de transport peu commun.\nVous ne distinguez que très difficilement quelques lettres.\n\nSauriez-vous recomposer le mot ?</string>
+    <string name="enigma2_step1_answer_invalid">Le mot que vous avez renseigné ne convient pas !</string>
+
+    <!-- Enigma 2 Step 2 -->
+    <string name="enigma2_step2_title">Enigme 2: 2ème étape</string>
+    <string name="enigma2_step2_text">Vous tombez sur un vieux bouquin qui parlent d\'oiseaux, mais vous n\'y comprenais pas grand chose. Peut-être que tout cela signifie vraiment quelque chose finalement ?</string>
+    <string name="enigma2_step2_text_2">Le corps aérodynamique et une forte musculature pectorale sont également des facteurs favorables au vol, ce qui profite bien évidemment aux oiseaux de toutes espèces. Mais est-ce que l’on doit pour autant s’arrêter là ? Les études pointant du doigt les effets de l’agriculture intensive et de l’utilisation massive de pesticides sur la biodiversité se multiplient. Les pingouins ont généralement les caractéristiques générales des oiseaux de la famille des Alcidae. Mais pourquoi les oiseaux volent ?</string>
+    <string name="enigma2_step2_text_2_part_1">est-ce que</string>
+    <string name="enigma2_step2_text_2_part_2">Les pingouins</string>
+    <string name="enigma2_step2_text_2_part_3">volent</string>
+    <string name="enigma2_step2_answer_invalid">Ce n\'est pas la réponse attendue !</string>
+
+    <!-- Enigma 2 Step 3 -->
+    <string name="enigma2_step3_title">Enigme 3: 3ème étape</string>
+
+    <!-- Enigma 3 Step 1 -->
+    <string name="enigma3_step1_title">Enigme 3: 1ère étape</string>
+
 
 </resources>

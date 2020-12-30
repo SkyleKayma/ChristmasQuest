@@ -5,6 +5,7 @@ import android.util.AttributeSet
 import android.view.LayoutInflater
 import androidx.cardview.widget.CardView
 import fr.openium.kotlintools.ext.dip
+import fr.openium.kotlintools.ext.getDrawableCompat
 import fr.skyle.christmasquest.R
 import fr.skyle.christmasquest.databinding.EnigmaItemLayoutBinding
 
@@ -14,7 +15,7 @@ class EnigmaItemLayout(context: Context, attrs: AttributeSet? = null) : CardView
         EnigmaItemLayoutBinding.inflate(LayoutInflater.from(context), this)
 
     var listener: OnStarClickedListener? = null
-    private var isResolved: Boolean = false
+    var isResolved: Boolean = false
 
     init {
         // Set style
@@ -26,10 +27,7 @@ class EnigmaItemLayout(context: Context, attrs: AttributeSet? = null) : CardView
 
         // Listeners
         binding.imageViewEnigmaItemCompletion.setOnClickListener {
-            if (isResolved) {
-                setResolved()
-                listener?.onStarClicked()
-            }
+            listener?.onStarClicked()
         }
     }
 
@@ -53,10 +51,16 @@ class EnigmaItemLayout(context: Context, attrs: AttributeSet? = null) : CardView
         }
     }
 
-    private fun setResolved() {
+    fun setResolved() {
         isResolved = true
         binding.imageViewEnigmaItemCompletion.setImageResource(R.drawable.ic_star_complete)
         binding.textViewEnigmaItemSubtitle.setCompoundDrawables(null, null, null, null)
+    }
+
+    fun reset() {
+        isResolved = false
+        binding.imageViewEnigmaItemCompletion.setImageResource(R.drawable.ic_star_uncomplete)
+        binding.textViewEnigmaItemSubtitle.setCompoundDrawables(null, null, context.getDrawableCompat(R.drawable.ic_arrow_right), null)
     }
 
     interface OnStarClickedListener {

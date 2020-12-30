@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
+    android:fillViewport="true">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="95dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start|top"
+            android:adjustViewBounds="true"
+            android:padding="20dp"
+            android:rotation="122"
+            android:src="@drawable/ic_gift_6"
+            android:translationX="-35dp"
+            android:translationY="-35dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingHorizontal="32dp"
+            android:paddingVertical="20dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/enigma1_step2_text"
+                android:textAppearance="@style/AppTheme.TextAppearance.Regular"
+                android:textColor="@color/colorAccent"
+                android:textSize="16sp" />
+
+            <LinearLayout
+                android:id="@+id/linearLayoutEnigma1Step2NoFlash"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="48dp"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/enigma1_step2_no_flash"
+                    android:textAppearance="@style/AppTheme.TextAppearance.Regular"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="11sp" />
+
+                <Button
+                    android:id="@+id/buttonHomeContinue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="@string/generic_next"
+                    app:icon="@drawable/ic_arrow_right_full"
+                    app:iconGravity="end"
+                    app:iconTint="@color/colorAccent" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+</ScrollView>

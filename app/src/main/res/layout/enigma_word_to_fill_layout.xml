@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:background="@color/colorPrimaryDark"
+    tools:layout_height="wrap_content"
+    tools:layout_width="match_parent"
+    tools:parentTag="android.widget.FrameLayout">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="12dp">
+
+        <include
+            android:id="@+id/enigmaWordToFillItem1"
+            layout="@layout/enigma_word_to_fill_item_layout" />
+
+        <include
+            android:id="@+id/enigmaWordToFillItem2"
+            layout="@layout/enigma_word_to_fill_item_layout" />
+
+        <include
+            android:id="@+id/enigmaWordToFillItem3"
+            layout="@layout/enigma_word_to_fill_item_layout" />
+
+        <include
+            android:id="@+id/enigmaWordToFillItem4"
+            layout="@layout/enigma_word_to_fill_item_layout" />
+
+        <include
+            android:id="@+id/enigmaWordToFillItem5"
+            layout="@layout/enigma_word_to_fill_item_layout" />
+
+        <include
+            android:id="@+id/enigmaWordToFillItem6"
+            layout="@layout/enigma_word_to_fill_item_layout" />
+
+        <include
+            android:id="@+id/enigmaWordToFillItem7"
+            layout="@layout/enigma_word_to_fill_item_layout" />
+
+        <include
+            android:id="@+id/enigmaWordToFillItem8"
+            layout="@layout/enigma_word_to_fill_item_layout" />
+
+        <include
+            android:id="@+id/enigmaWordToFillItem9"
+            layout="@layout/enigma_word_to_fill_item_layout" />
+
+    </LinearLayout>
+
+</merge>

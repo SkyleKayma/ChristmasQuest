@@ -95,6 +95,106 @@
         android:id="@+id/navigation_home"
         android:name="fr.skyle.christmasquest.ui.home.HomeFragment"
         android:label="HomeFragment"
-        tools:layout="@layout/home_fragment" />
+        tools:layout="@layout/home_fragment">
+        <action
+            android:id="@+id/action_navigation_home_to_navigation_enigma_1_step_1"
+            app:destination="@id/navigation_enigma_1_step_1" />
+        <action
+            android:id="@+id/action_navigation_home_to_navigation_enigma_1_step_2"
+            app:destination="@id/navigation_enigma_1_step_2" />
+        <action
+            android:id="@+id/action_navigation_home_to_navigation_enigma_1_step_3"
+            app:destination="@id/navigation_enigma_1_step_3" />
+        <action
+            android:id="@+id/action_navigation_home_to_navigation_enigma_2_step_1"
+            app:destination="@id/navigation_enigma_2_step_1" />
+        <action
+            android:id="@+id/action_navigation_home_to_navigation_enigma_2_step_2"
+            app:destination="@id/navigation_enigma_2_step_2" />
+        <action
+            android:id="@+id/action_navigation_home_to_navigation_enigma_2_step_3"
+            app:destination="@id/navigation_enigma_2_step_3" />
+        <action
+            android:id="@+id/action_navigation_home_to_navigation_enigma_3_step_1"
+            app:destination="@id/navigation_enigma_3_step_1" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_enigma_1_step_1"
+        android:name="fr.skyle.christmasquest.ui.enigma1.Enigma1Step1Fragment"
+        android:label="@string/enigma1_step1_title"
+        tools:layout="@layout/enigma1_step1_fragment">
+        <action
+            android:id="@+id/action_navigation_enigma_1_step_1_to_navigation_enigma_1_step_2"
+            app:destination="@id/navigation_enigma_1_step_2"
+            app:popUpTo="@id/navigation_enigma_1_step_1"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_enigma_1_step_2"
+        android:name="fr.skyle.christmasquest.ui.enigma1.Enigma1Step2Fragment"
+        android:label="@string/enigma1_step2_title"
+        tools:layout="@layout/enigma1_step2_fragment">
+        <action
+            android:id="@+id/action_navigation_enigma_1_step_2_to_navigation_enigma_1_step_3"
+            app:destination="@id/navigation_enigma_1_step_3"
+            app:popUpTo="@id/navigation_enigma_1_step_2"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_enigma_1_step_3"
+        android:name="fr.skyle.christmasquest.ui.enigma1.Enigma1Step3Fragment"
+        android:label="@string/enigma1_step3_title"
+        tools:layout="@layout/enigma1_step3_fragment">
+        <action
+            android:id="@+id/action_navigation_enigma_1_step_3_to_navigation_home"
+            app:destination="@id/navigation_home"
+            app:popUpTo="@id/navigation_enigma_1_step_3"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_enigma_2_step_1"
+        android:name="fr.skyle.christmasquest.ui.enigma2.Enigma2Step1Fragment"
+        android:label="@string/enigma2_step1_title"
+        tools:layout="@layout/enigma2_step1_fragment">
+        <action
+            android:id="@+id/action_navigation_enigma_2_step_1_to_navigation_enigma_2_step_2"
+            app:destination="@id/navigation_enigma_2_step_2"
+            app:popUpTo="@id/navigation_enigma_2_step_1"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_enigma_2_step_2"
+        android:name="fr.skyle.christmasquest.ui.enigma2.Enigma2Step2Fragment"
+        android:label="@string/enigma2_step2_title"
+        tools:layout="@layout/enigma2_step2_fragment">
+        <action
+            android:id="@+id/action_navigation_enigma_2_step_2_to_navigation_enigma_2_step_3"
+            app:destination="@id/navigation_enigma_2_step_3"
+            app:popUpTo="@id/navigation_enigma_2_step_2"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_enigma_2_step_3"
+        android:name="fr.skyle.christmasquest.ui.enigma2.Enigma2Step3Fragment"
+        android:label="@string/enigma2_step3_title"
+        tools:layout="@layout/enigma2_step3_fragment">
+        <action
+            android:id="@+id/action_navigation_enigma_2_step_3_to_navigation_home"
+            app:destination="@id/navigation_home"
+            app:popUpTo="@id/navigation_enigma_2_step_3"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_enigma_3_step_1"
+        android:name="fr.skyle.christmasquest.ui.enigma3.Enigma3Step1Fragment"
+        android:label="@string/enigma3_step1_title"
+        tools:layout="@layout/enigma3_step1_fragment" />
 
 </navigation>

@@ -96,11 +96,11 @@ class MainActivity : AppCompatActivity() {
 
                 override fun onChildAdded(snapshot: DataSnapshot, previousChildName: String?) {
                     when (snapshot.key) {
-                        ENIGMA_FIRST ->
+                        ENIGMA_1_STEP_3 ->
                             snackbar(getString(R.string.achievement_enigma_first), Snackbar.LENGTH_SHORT)
-                        ENIGMA_SECOND ->
+                        ENIGMA_2_STEP_3 ->
                             snackbar(getString(R.string.achievement_enigma_second), Snackbar.LENGTH_SHORT)
-                        ENIGMA_THIRD ->
+                        ENIGMA_3_STEP_3 ->
                             snackbar(getString(R.string.achievement_enigma_third), Snackbar.LENGTH_SHORT)
                         SECRET_CHRISTMAS_GIFT ->
                             snackbar(getString(R.string.achievement_secret_gift), Snackbar.LENGTH_SHORT)

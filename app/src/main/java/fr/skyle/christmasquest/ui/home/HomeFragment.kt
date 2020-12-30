@@ -3,14 +3,16 @@ package fr.skyle.christmasquest.ui.home
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
-import fr.skyle.christmasquest.SECRET_CHRISTMAS_GIFT
-import fr.skyle.christmasquest.SECRET_CHRISTMAS_STAR
-import fr.skyle.christmasquest.SECRET_CHRISTMAS_TINSEL
+import com.google.android.material.snackbar.Snackbar
+import fr.openium.kotlintools.ext.snackbar
+import fr.skyle.christmasquest.*
 import fr.skyle.christmasquest.base.fragment.AbstractBindingFragment
 import fr.skyle.christmasquest.databinding.HomeFragmentBinding
 import fr.skyle.christmasquest.event.eventHomeLoaded
 import fr.skyle.christmasquest.event.eventPlayerAchievementsChanged
 import fr.skyle.christmasquest.ext.fromIOToMain
+import fr.skyle.christmasquest.ext.navigate
+import fr.skyle.christmasquest.view.EnigmaItemLayout
 import fr.skyle.christmasquest.view.SecretGiftItemLayout
 import fr.skyle.christmasquest.view.SecretStarItemLayout
 import fr.skyle.christmasquest.view.SecretTinselLightBulbItemLayout
@@ -42,7 +44,6 @@ class HomeFragment : AbstractBindingFragment<HomeFragmentBinding>() {
 
         // Update displays
         updateDisplay()
-
     }
 
     // --- Other job
@@ -103,9 +104,72 @@ class HomeFragment : AbstractBindingFragment<HomeFragmentBinding>() {
         binding.secretStarItem1.listener = onStarResolvedListener
         binding.secretStarItem2.listener = onStarResolvedListener
         binding.secretStarItem3.listener = onStarResolvedListener
+
+        // Enigma listeners
+        binding.homeEnigmaLayout1.setOnClickListener {
+            if (!checkIfPlayerAlreadyHaveAchievement(ENIGMA_1_STEP_1)) {
+                navigate(HomeFragmentDirections.actionNavigationHomeToNavigationEnigma1Step1())
+            } else if (!checkIfPlayerAlreadyHaveAchievement(ENIGMA_1_STEP_2)) {
+                navigate(HomeFragmentDirections.actionNavigationHomeToNavigationEnigma1Step2())
+            } else if (!checkIfPlayerAlreadyHaveAchievement(ENIGMA_1_STEP_3)) {
+                navigate(HomeFragmentDirections.actionNavigationHomeToNavigationEnigma1Step3())
+            }
+        }
+
+        binding.homeEnigmaLayout2.setOnClickListener {
+            if (checkIfPlayerAlreadyHaveAchievement(ENIGMA_1_STEP_3)) {
+                if (!checkIfPlayerAlreadyHaveAchievement(ENIGMA_2_STEP_1)) {
+                    navigate(HomeFragmentDirections.actionNavigationHomeToNavigationEnigma2Step1())
+                } else if (!checkIfPlayerAlreadyHaveAchievement(ENIGMA_2_STEP_2)) {
+                    navigate(HomeFragmentDirections.actionNavigationHomeToNavigationEnigma2Step2())
+                } else if (!checkIfPlayerAlreadyHaveAchievement(ENIGMA_2_STEP_3)) {
+                    navigate(HomeFragmentDirections.actionNavigationHomeToNavigationEnigma2Step3())
+                }
+            } else snackbar(R.string.home_enigma_prerequisite_enigma_1, Snackbar.LENGTH_SHORT)
+        }
+
+        binding.homeEnigmaLayout3.setOnClickListener {
+            if (checkIfPlayerAlreadyHaveAchievement(ENIGMA_1_STEP_3)) {
+                if (checkIfPlayerAlreadyHaveAchievement(ENIGMA_2_STEP_3)) {
+                    if (!checkIfPlayerAlreadyHaveAchievement(ENIGMA_3_STEP_3)) {
+                        navigate(HomeFragmentDirections.actionNavigationHomeToNavigationEnigma3Step1())
+                    }
+//                    else if (!checkIfPlayerAlreadyHaveAchievement(ENIGMA_3_STEP_3)) {
+//                        navigate(HomeFragmentDirections.actionNavigationHomeToNavigationEnigma3Step2())
+//                    } else if (!checkIfPlayerAlreadyHaveAchievement(ENIGMA_3_STEP_3)) {
+//                        navigate(HomeFragmentDirections.actionNavigationHomeToNavigationEnigma3Step3())
+//                    }
+                } else snackbar(R.string.home_enigma_prerequisite_enigma_2, Snackbar.LENGTH_SHORT)
+            } else snackbar(R.string.home_enigma_prerequisite_enigma_1, Snackbar.LENGTH_SHORT)
+        }
+
+        binding.homeEnigmaLayout1.listener = object : EnigmaItemLayout.OnStarClickedListener {
+            override fun onStarClicked() {
+                if (binding.homeEnigmaLayout1.isResolved) {
+                    binding.secretStarItem1.setResolved()
+                }
+            }
+        }
+
+        binding.homeEnigmaLayout2.listener = object : EnigmaItemLayout.OnStarClickedListener {
+            override fun onStarClicked() {
+                if (binding.homeEnigmaLayout2.isResolved) {
+                    binding.secretStarItem2.setResolved()
+                }
+            }
+        }
+
+        binding.homeEnigmaLayout3.listener = object : EnigmaItemLayout.OnStarClickedListener {
+            override fun onStarClicked() {
+                if (binding.homeEnigmaLayout3.isResolved) {
+                    binding.secretStarItem3.setResolved()
+                }
+            }
+        }
     }
 
     private fun updateDisplay() {
+        initEnigmaStatus()
         initSecretGifts()
         initSecretTinselTab()
         initSecretStars()
@@ -113,6 +177,27 @@ class HomeFragment : AbstractBindingFragment<HomeFragmentBinding>() {
 
     private fun checkIfPlayerAlreadyHaveAchievement(achievementId: String): Boolean =
         model.checkIfPlayerHaveAchievement(achievementId)
+
+    // Enigma
+    private fun initEnigmaStatus() {
+        if (checkIfPlayerAlreadyHaveAchievement(ENIGMA_1_STEP_3)) {
+            binding.homeEnigmaLayout1.setResolved()
+        } else {
+            binding.homeEnigmaLayout1.reset()
+        }
+
+        if (checkIfPlayerAlreadyHaveAchievement(ENIGMA_2_STEP_3)) {
+            binding.homeEnigmaLayout2.setResolved()
+        } else {
+            binding.homeEnigmaLayout2.reset()
+        }
+
+        if (checkIfPlayerAlreadyHaveAchievement(ENIGMA_3_STEP_3)) {
+            binding.homeEnigmaLayout3.setResolved()
+        } else {
+            binding.homeEnigmaLayout3.reset()
+        }
+    }
 
     // Gift
     private fun initSecretGifts() {
@@ -134,14 +219,14 @@ class HomeFragment : AbstractBindingFragment<HomeFragmentBinding>() {
     }
 
     private fun addTextToSecretGift(value: Int) {
-        if (!secretGiftText.contains(value.toString())) {
+        if (!secretGiftText.contains(value.toString(), true)) {
             secretGiftText += value
         }
         checkIfSecretGiftCompleted()
     }
 
     private fun checkIfSecretGiftCompleted() {
-        val isValid = secretGiftText.contains(GIFT_COMBINATION_TO_FIND)
+        val isValid = secretGiftText.contains(GIFT_COMBINATION_TO_FIND, true)
 
         if (secretGiftText.count() >= 6) {
             secretGiftText = ""
